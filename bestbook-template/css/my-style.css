@@ -1,0 +1,330 @@
+.comment-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.blog-header {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #343a40;
+    color: #fff;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-image {
+    border-radius: 10px;
+}
+
+.comment {
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 0;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+/* Стили для основной обертки блока с текстом и изображением */
+.cta-container {
+    max-width: 1200px; /* Ограничение максимальной ширины для наилучшего отображения на больших экранах */
+    margin: 0 auto; /* Центрирование блока */
+    padding: 2rem; /* Внутренние отступы */
+}
+
+/* Стили для заголовков */
+.cta-title {
+    font-size: 2rem; /* Размер шрифта заголовка */
+    line-height: 1.2; /* Высота строки */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+}
+
+.cta-description {
+    font-size: 1.25rem; /* Размер шрифта подзаголовка */
+    margin-bottom: 1rem; /* Отступ снизу */
+    color: #666; /* Цвет текста */
+}
+
+/* Стили для кнопок */
+.btn {
+padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #333370;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+    margin-left: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: #2d2d6bcc; /* Изменение цвета фона при наведении */
+}
+
+.btn-success {
+    background-color: #28a745; /* Цвет кнопки WhatsApp */
+    color: white; /* Цвет текста на кнопке */
+}
+
+/* Стили для изображений */
+.cta-image {
+    max-width: 100%; /* Ограничение ширины для отображения на мобильных устройствах */
+    height: auto; /* Адаптивная высота */
+    margin-top: 1rem; /* Отступ сверху для стыковки с текстом */
+}
+
+.buy-now .btn-buy-now {
+  position: fixed;
+  bottom: 3rem;
+  right: 1.625rem;
+  z-index: 1080;
+  box-shadow: 0 1px 20px 1px #333370;
+}
+
+[dir=rtl] .buy-now .btn-buy-now {
+    left: 1.625rem;
+    right: inherit;
+}
+
+.buy-now .btn-buy-now:hover {
+    box-shadow: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.my-4 {
+    margin-top: 1.5rem; /* Отступ сверху */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+}
+
+.col-md-6.d-flex {
+    flex-direction: column; /* Чтобы элементы располагались по вертикали, если необходимо */
+}
+
+.main-section {
+    padding: 20px 0;
+    background-color: #f5f5f9 !important;
+    border-top-left-radius: 3.75rem;
+    border-top-right-radius: 3.75rem;
+}
+
+.service-list {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: #333370;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+    margin-left: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.29);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.service-list-col1 {
+    font-size: 3em;
+    color: #6640ff; /* Adjust color as needed */
+    margin-bottom: 20px;
+}
+
+.service-list-col2 {
+    text-align: left;
+    padding: 10px 0; /* Adjust spacing as needed */
+    flex-grow: 1; /* Allow content to expand to fill available space */
+}
+
+.service-list-col2 h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner {
+    display: flex;
+    align-items: center; /* Исправлено с align-data2 на align-items */
+    padding: 20px;
+    background-color: #fbfbfb;
+    border-radius: 30px;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.custom-width {
+    max-width: 1140px; /* Максимальная ширина 1140px */
+    width: 100%; /* Занимает всю ширину контейнера */
+    margin: 0 auto; /* Центрируем блок */
+}
+
+/* Далее стили для футера, оставляем без изменений */
+
+.footer-1 {
+background-color: #f5f5f9;
+  color: #fff;
+  padding: 20px 0px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 15px;
+}
+
+.footer__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer__description {
+    font-size: 16px;
+    color: #b5b5b5;
+    margin-bottom: 30px;
+}
+
+.subscribe-form input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+<!--.btn-subscribe {-->
+<!--    background-color: #007bff;-->
+<!--    color: white;-->
+<!--    border: none;-->
+<!--    padding: 10px 20px;-->
+<!--    border-radius: 5px;-->
+<!--    cursor: pointer;-->
+<!--}-->
+
+<!--.btn-subscribe i {-->
+<!--    margin-left: 5px;-->
+<!--}-->
+
+<!--.btn-subscribe:hover {-->
+<!--    background-color: #0056b3;-->
+<!--}-->
+
+.footer__document-item .icon img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.footer__document-item .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff8a;
+}
+
+.footer__logo img {
+    max-width: 100%;
+}
+.footer__social {
+  display: flex;          /* Отображаем элементы в строку */
+  justify-content: center; /* Центрируем иконки по горизонтали */
+  gap: 15px;              /* Задаем промежуток между иконками */
+  list-style: none;        /* Убираем маркеры списка */
+  padding: 0;             /* Убираем отступы */
+  margin: 0;
+}
+
+.footer__social li a {
+  font-size: 20px;         /* Размер иконок */
+  color: #fff;             /* Цвет иконок */
+}
+
+.footer__social li a:hover {
+  color: var(--color-primary); /* Цвет при наведении */
+}
+
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+}
+
+.footer__document-item {
+  display: inline-block;
+  width: 150px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #ffffff0d;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.footer__document-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличенная тень при наведении */
+    border-color: #007bff; /* Синяя рамка при наведении */
+    transform: translateY(-5px); /* Небольшое поднятие при наведении */
+}
+
+.footer__document-item .icon img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 28px;
+    height: 34px;
+
+}
+
+.footer__document-item:hover .title {
+    color: #007bff; /* Изменение цвета текста при наведении */
+}
+.text-end {
+    text-align: right; /* Выравнивание только для текста заголовка */
+}
+.footer__subscribe form {
+  max-width:322px;
+  position:relative;
+}
+.footer__subscribe form button {
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  width: 65px;
+  background-color: #007bff;
+  color: var(--color-white);
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}

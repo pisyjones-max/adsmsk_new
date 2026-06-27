@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ads.msk.ru/sitemap.xml
+
+Disallow: /analitics.html

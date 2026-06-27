@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Карта 4 СЕЗОНА</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
+        .card {
+            width: 100%; max-width: 350px; height: 200px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 20px; padding: 20px; color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .balance-val { font-size: 2.5rem; font-weight: bold; }
+        #loader { font-weight: bold; color: #1e3c72; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <div id="loader">СИНХРОНИЗАЦИЯ...</div>
+    <div id="main-content" style="display: none;">
+        <div class="card">
+            <div style="font-weight: bold; letter-spacing: 2px;">4 СЕЗОНА</div>
+            <div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">ВАШ БАЛАНС</div>
+                <div class="balance-val"><span id="balance">0</span> ₽</div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div id="user-name">КЛИЕНТ</div>
+                <div id="card-number">4S-0000</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        
+        async function load() {
+            const user = tg.initDataUnsafe?.user;
+            if (user) {
+                try {
+                    // Добавляем timestamp для обхода кэша
+                    const response = await fetch('/api/get_user/' + user.id + '?t=' + Date.now());
+                    const data = await response.json();
+                    if (data.ok) {
+                        document.getElementById('balance').innerText = data.balance;
+                        document.getElementById('card-number').innerText = data.card;
+                        document.getElementById('user-name').innerText = user.first_name;
+                        document.getElementById('loader').style.display = 'none';
+                        document.getElementById('main-content').style.display = 'block';
+                    } else {
+                        document.getElementById('loader').innerText = "ЗАРЕГИСТРИРУЙТЕСЬ В БОТЕ";
+                    }
+                } catch (e) {
+                    document.getElementById('loader').innerText = "ОШИБКА СВЯЗИ С API";
+                }
+            }
+        }
+        load();
+    </script>
+</body>
+</html>

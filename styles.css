@@ -1,0 +1,342 @@
+
+  /* Header styles */
+  .default-header {
+    background-color: #05071a;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 18px;
+    box-shadow: 0 0 10px 5px rgba(50, 50, 110, 0.26);
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-logo .logo-img {
+    width: 50px;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-menu .whatsapp-btn {
+    background-color: #25D366;
+  }
+
+  .nav-menu .telegram-btn {
+    background-color: #0088cc;
+  }
+
+  .nav-menu a:hover {
+    opacity: 0.8;
+  }
+
+  /* Responsive menu toggle */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #24252d;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      padding: 20px 10px;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+  }
+
+  /* Banner styles */
+  .banner {
+    background-color: #05071a;
+    color: #e3e3e3;
+    padding: 40px 20px;
+    margin-top: 2%;
+  }
+
+  .gradient-text {
+    font-size: 4vw;
+    background: linear-gradient(to right, red, yellow, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .timer-box {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .custom-heading {
+    background: linear-gradient(to right, rgb(255, 0, 155), rgb(220, 122, 152), rgb(31, 42, 145));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 3vw;
+  }
+
+  .custom-subheading {
+    font-size: 2vw;
+    color: rgb(151, 156, 183);
+  }
+
+  /* Responsive text adjustments */
+  @media (max-width: 768px) {
+    .gradient-text {
+      font-size: 8vw;
+    }
+
+    .custom-heading {
+      font-size: 6vw;
+    }
+
+    .custom-subheading {
+      font-size: 4vw;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .gradient-text {
+      font-size: 10vw;
+    }
+
+    .custom-heading {
+      font-size: 8vw;
+    }
+
+    .custom-subheading {
+      font-size: 6vw;
+    }
+  }
+
+  /* Responsive block styles */
+  .responsive-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px rgba(50, 50, 110, 0.26);
+    background: #05071a;
+    max-width: 1200px;
+    width: 80%;
+  }
+
+  .left-block {
+    flex: 0.4;
+    background: linear-gradient(to top, #680153, #60c);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .old-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    margin: 10px 0;
+  }
+
+  .btn-primary {
+    margin: 20px 0;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+
+  .right-block {
+    flex: 0.6;
+    padding: 20px;
+    background-color: #242A42;
+    color: #f0f0f0;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+
+  .right-block h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .right-block ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #eee;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+  .responsive-block {
+    flex-direction: column;  /* Это заставляет блоки располагаться вертикально */
+    width: 100%; /* Контейнер занимает всю ширину экрана */
+    padding: 10px; /* Уменьшаем отступы */
+  }
+
+  .left-block, .right-block {
+    flex: 1; /* Каждый блок будет занимать 100% ширины контейнера */
+    width: 100%; /* Убираем фиксированную ширину */
+    margin: 0; /* Убираем внешние отступы */
+    border-radius: 0; /* Убираем скругления */
+  }
+
+    .price {
+      font-size: 2rem;
+    }
+
+    .old-price {
+      font-size: 1.2rem;
+    }
+
+    .btn-primary {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+    }
+
+    .right-block h3 {
+      font-size: 1.2rem;
+    }
+
+    .right-block ul {
+      font-size: 1rem;
+    }
+  }
+
+  /* Common blog styles */
+  .blog-title {
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .blog-subtitle {
+    font-size: 24px;
+    color: #25d366;
+    margin-bottom: 10px;
+  }
+
+  .blog-text {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+  }
+
+  .blog-section {
+    margin-bottom: 50px;
+  }
+  @media (max-width: 768px) {
+  .responsive-block-new {
+    flex-direction: column;  /* Это заставляет блоки располагаться вертикально */
+    width: 100%; /* Контейнер занимает всю ширину экрана */
+    padding: 10px; /* Уменьшаем отступы */
+  }
+
+  .left-block, .right-block {
+    flex: 1; /* Каждый блок будет занимать 100% ширины контейнера */
+    width: 100% !important;
+    margin: 0; /* Убираем внешние отступы */
+    border-radius: 0; /* Убираем скругления */
+  }
+
+    .price {
+      font-size: 2rem;
+    }
+    .p {
+      font-size: 18px; /* Уменьшение размера шрифта */
+      max-width: 90%; /* Увеличение ширины текста */
+    }
+
+    .old-price {
+      font-size: 1.2rem;
+    }
+
+    .btn-primary {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+    }
+
+    .right-block h3 {
+      font-size: 1.6rem;
+    }
+
+    .right-block ul {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+  .cta-block {
+    flex-direction: column; /* Ставим элементы в столбик */
+    text-align: center;    /* Центрируем текст и кнопку */
+  }
+
+  .cta-block > div {
+    flex-basis: 100%;      /* Элементы занимают всю ширину */
+    margin-bottom: 15px;   /* Добавляем отступ между блоками */
+  }
+
+  .cta-block h2 {
+    font-size: 24px;       /* Уменьшаем размер заголовка */
+  }
+
+  .cta-block p {
+    font-size: 16px;       /* Уменьшаем размер текста */
+  }
+
+  .cta-block .btn {
+    font-size: 16px;       /* Уменьшаем размер кнопки */
+    padding: 10px 15px;    /* Корректируем внутренние отступы кнопки */
+  }
+}
+
+
+
+
+
+

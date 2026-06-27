@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коммерческое предложение: Сайт для Арт-студии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .flow-diagram-box {
+            border: 2px solid #118AB2;
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            color: #073B4C;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #118AB2;
+            margin: 0 0.5rem;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FF6B6B, #118AB2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-[#073B4C]">
+
+    <main class="container mx-auto p-4 sm:p-6 md:p-8 max-w-6xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-2 gradient-text">Выберите идеальный сайт для вашей Арт-студии</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Мы предлагаем два пакета, разработанных для разных целей и бюджетов. Давайте посмотрим, какой подходит именно вам.</p>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
+                <h2 class="text-3xl font-bold text-[#FF6B6B] mb-4">Пакет "Старт"</h2>
+                <p class="text-gray-600 mb-6">Идеальное решение для быстрого запуска и эффектной презентации вашей студии в интернете.</p>
+                <div class="text-5xl font-extrabold mb-6">17 000 <span class="text-3xl font-bold text-gray-500">руб.</span></div>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Одностраничный сайт-лендинг</li>
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Простая форма для записи</li>
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Ссылки на ВКонтакте и Telegram</li>
+                </ul>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-4 border-[#118AB2] transform hover:scale-105 transition-transform duration-300">
+                 <div class="text-center mb-4"><span class="bg-[#118AB2] text-white text-sm font-bold px-4 py-1 rounded-full">РЕКОМЕНДУЕМ</span></div>
+                <h2 class="text-3xl font-bold text-[#118AB2] mb-4">Пакет "Профи"</h2>
+                <p class="text-gray-600 mb-6">Полноценный инструмент для развития бизнеса, автоматизации процессов и привлечения клиентов.</p>
+                <div class="text-5xl font-extrabold mb-6">от 40 000 <span class="text-3xl font-bold text-gray-500">руб.</span></div>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Многостраничный сайт с блогом</li>
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Онлайн-галерея работ учеников</li>
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Автоматическая онлайн-запись</li>
+                    <li class="flex items-center"><span class="text-[#06D6A0] mr-3 text-2xl">✓</span>Автопостинг в соцсети</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Сравнение по ключевым параметрам</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Сравнение стоимости</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">Пакет "Профи" открывает больше возможностей для роста вашего бизнеса.</p>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4">Сроки разработки</h3>
+                     <p class="text-center text-sm text-gray-500 mb-4">Быстрый запуск или комплексная разработка - выбор за вами.</p>
+                    <div class="chart-container">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-center mb-2">Главное преимущество пакета "Профи": Автоматизация</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Функция автопостинга экономит ваше время и поддерживает активность в соцсетях без лишних усилий. Вы занимаетесь творчеством, а сайт работает на вас.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <div class="flow-diagram-box">
+                    <div class="text-xl font-bold">1. Новый контент</div>
+                    <div>(статья в блоге или работа в галерее)</div>
+                </div>
+                <div class="flow-arrow transform md:-translate-y-2">→</div>
+                <div class="flow-diagram-box bg-[#FFD166]">
+                     <div class="text-xl font-bold">2. Сайт</div>
+                    <div>(автоматически определяет новинку)</div>
+                </div>
+                <div class="flow-arrow transform md:-translate-y-2">→</div>
+                <div class="flow-diagram-box bg-[#06D6A0]">
+                     <div class="text-xl font-bold">3. Соцсети</div>
+                    <div>(публикует пост в ВК и Telegram)</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 pb-8 border-t border-gray-300 pt-8">
+            <p class="text-gray-600 mb-4">Готовы начать? Свяжитесь с нами удобным для вас способом:</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="https://sale.ads.msk.ru" class="text-[#118AB2] font-semibold hover:text-[#073B4C] transition-colors duration-300">Наш сайт</a>
+                <a href="https://t.me/UR16_bot?start" class="text-[#118AB2] font-semibold hover:text-[#073B4C] transition-colors duration-300">Telegram-бот</a>
+                <a href="mailto:ads.msk.ru@yandex.ru" class="text-[#118AB2] font-semibold hover:text-[#073B4C] transition-colors duration-300">Почта</a>
+            </div>
+        </footer>
+    </main>
+
+<script>
+    function wrapLabels(label, maxLength) {
+        if (typeof label !== 'string' || label.length <= maxLength) {
+            return label;
+        }
+        const words = label.split(' ');
+        const lines = [];
+        let currentLine = '';
+        for (const word of words) {
+            if ((currentLine + ' ' + word).length > maxLength && currentLine.length > 0) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                if (currentLine.length > 0) {
+                    currentLine += ' ';
+                }
+                currentLine += word;
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+    }
+
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        return Array.isArray(label) ? label.join(' ') : label;
+    };
+
+    const commonChartOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+            tooltip: {
+                callbacks: {
+                    title: tooltipTitleCallback
+                },
+                backgroundColor: '#073B4C',
+                titleFont: { size: 14, weight: 'bold' },
+                bodyFont: { size: 12 },
+                padding: 12,
+                cornerRadius: 8,
+                displayColors: false,
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: '#e0e0e0',
+                    borderDash: [2, 4],
+                },
+                ticks: {
+                    color: '#073B4C',
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                 ticks: {
+                    color: '#073B4C',
+                     font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    };
+
+    const priceData = {
+        labels: ['Старт', 'Профи'],
+        datasets: [{
+            label: 'Стоимость',
+            data: [17000, 40000],
+            backgroundColor: ['#FF6B6B', '#118AB2'],
+            borderColor: ['#FF6B6B', '#118AB2'],
+            borderWidth: 1,
+            borderRadius: 8,
+            barThickness: 50,
+        }]
+    };
+    new Chart(document.getElementById('priceChart'), {
+        type: 'bar',
+        data: priceData,
+        options: {
+            ...commonChartOptions,
+            scales: {
+                ...commonChartOptions.scales,
+                y: {
+                     ...commonChartOptions.scales.y,
+                     ticks: {
+                        ...commonChartOptions.scales.y.ticks,
+                        callback: function(value) {
+                            return value.toLocaleString('ru-RU') + ' руб.';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    const timelineData = {
+        labels: ['Старт', 'Профи'],
+        datasets: [{
+            label: 'Срок разработки',
+            data: [5, 14],
+            backgroundColor: ['#FFD166', '#06D6A0'],
+            borderColor: ['#FFD166', '#06D6A0'],
+            borderWidth: 1,
+            borderRadius: 8,
+            barThickness: 50,
+        }]
+    };
+    new Chart(document.getElementById('timelineChart'), {
+        type: 'bar',
+        data: timelineData,
+        options: {
+            ...commonChartOptions,
+            scales: {
+                 ...commonChartOptions.scales,
+                 y: {
+                     ...commonChartOptions.scales.y,
+                     ticks: {
+                        ...commonChartOptions.scales.y.ticks,
+                        callback: function(value) {
+                            return value + ' дн.';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

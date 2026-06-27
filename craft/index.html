@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Steel Craft — Навесы, Гаражи и Ворота с гарантией 10 лет</title>
+<meta name="description" content="Производство и монтаж навесов, сборных гаражей и автоматических ворот. Собственное производство. Монтаж за 1 день. Официальный договор."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F2F0EB;--surface:#FFF;--surface2:#F8F6F2;
+  --border:#E4E1DA;--accent:#BF3E22;--accent-h:#a33318;
+  --dark:#192C1E;--dark-h:#0f1f14;--text:#1A1916;
+  --muted:#7B7772;--tag:#E6E3DC;--success:#2A7A4B;
+  --gold:#C9860A;--gold-bg:#FFF8E8;--tg:#229ED9;--green:#7ECC9A;
+  --fh:'Unbounded',sans-serif;--fb:'Geologica',sans-serif;
+  --r:10px;--rl:14px;--rx:22px;
+  --sh-sm:0 2px 8px rgba(0,0,0,.07);
+  --sh-md:0 6px 24px rgba(0,0,0,.10);
+  --sh-lg:0 16px 48px rgba(0,0,0,.15);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);font-family:var(--fb);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:var(--fb)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);background:#FFEDE8;padding:5px 13px;border-radius:20px;margin-bottom:14px}
+.section-label.green{color:var(--success);background:#E8F5EE}
+.section-label.gold{color:var(--gold);background:var(--gold-bg)}
+.section-title{font-family:var(--fh);font-size:clamp(22px,4vw,34px);font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:12px}
+.section-title.on-dark{color:#fff}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:560px}
+.section-sub.on-dark{color:rgba(255,255,255,.6)}
+.section{padding:80px 0}.section-sm{padding:56px 0}
+.section-alt{background:var(--surface2)}.section-dark{background:var(--dark)}
+.section-head{margin-bottom:48px}
+.section-head.centered{text-align:center;display:flex;flex-direction:column;align-items:center}
+.section-head.centered .section-sub{text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 26px;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .2s;white-space:nowrap;font-family:var(--fb)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(191,62,34,.3)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:var(--dark-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(25,44,30,.25)}
+.btn-outline-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
+.btn-ghost{background:transparent;color:var(--dark);border:1.5px solid var(--border)}
+.btn-ghost:hover{background:var(--surface2);border-color:var(--dark)}
+.btn-tg{background:var(--tg);color:#fff}
+.btn-tg:hover{background:#1a8fc3;transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,158,217,.3)}
+.btn-sm{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .2s;white-space:nowrap;font-family:var(--fb)}
+.btn-sm-accent{background:var(--accent);color:#fff}.btn-sm-accent:hover{background:var(--accent-h)}
+.btn-sm-dark{background:var(--dark);color:#fff}.btn-sm-dark:hover{background:var(--dark-h)}
+.btn-sm-ghost{background:transparent;color:rgba(255,255,255,.7);border:1.5px solid rgba(255,255,255,.2)}
+.btn-sm-ghost:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.4)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;font-family:var(--fh)}
+.badge-accent{background:var(--accent);color:#fff}
+.badge-dark{background:var(--dark);color:#fff}
+.badge-success{background:#E8F5EE;color:var(--success)}
+.badge-gold{background:var(--gold-bg);color:var(--gold)}
+.badge-tag{background:var(--tag);color:var(--muted)}
+.badge-white{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.finp{height:44px;border-radius:8px;border:1.5px solid var(--border);padding:0 14px;font-size:14px;outline:none;transition:border-color .2s;background:var(--surface2);width:100%;color:var(--text)}
+.finp:focus{border-color:var(--dark)}.finp.error{border-color:var(--accent)}
+.fsel{height:44px;border-radius:8px;border:1.5px solid var(--border);padding:0 36px 0 14px;font-size:14px;outline:none;appearance:none;background:var(--surface2) url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237B7772' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;width:100%;color:var(--text);cursor:pointer;transition:border-color .2s}
+.fsel:focus{border-color:var(--dark)}
+.ftarea{border-radius:8px;border:1.5px solid var(--border);padding:12px 14px;font-size:14px;outline:none;resize:vertical;min-height:90px;transition:border-color .2s;background:var(--surface2);width:100%;color:var(--text)}
+.ftarea:focus{border-color:var(--dark)}
+.finp-wrap{display:flex;flex-direction:column;gap:6px}
+.finp-wrap label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* TICKER */
+#ticker{background:var(--accent);color:#fff;height:34px;overflow:hidden;display:flex;align-items:center;position:relative;z-index:1000;flex-shrink:0}
+.ticker-track{display:flex;white-space:nowrap;animation:tickScroll 32s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 32px;font-size:11.5px;font-weight:500}
+.ticker-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.45);flex-shrink:0}
+@keyframes tickScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* HEADER */
+#header{position:sticky;top:0;z-index:900;background:var(--dark);color:#fff;height:64px;border-bottom:1px solid rgba(255,255,255,.06);transition:box-shadow .3s}
+#header.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.35)}
+.hdr-inner{display:flex;align-items:center;height:100%;gap:28px}
+.logo{font-family:var(--fh);font-size:17px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
+.logo-mark{width:36px;height:36px;border-radius:9px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.logo em{color:var(--green);font-style:normal}
+.hdr-nav{display:flex;align-items:center;gap:2px;flex:1}
+.nav-a{padding:7px 11px;font-size:13px;font-weight:500;color:rgba(255,255,255,.65);border-radius:7px;transition:all .15s;white-space:nowrap;text-decoration:none}
+.nav-a:hover{color:#fff;background:rgba(255,255,255,.08)}.nav-a.active{color:#fff}
+.hdr-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.hdr-phone{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:#fff;white-space:nowrap}
+.mob-toggle{display:none;width:42px;height:42px;border-radius:9px;background:rgba(255,255,255,.08);border:none;color:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:background .15s;flex-shrink:0}
+.mob-toggle:hover{background:rgba(255,255,255,.14)}
+.mob-toggle span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.mob-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mob-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.mob-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav-ovl{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);display:none;opacity:0;transition:opacity .25s}
+.mob-nav-ovl.visible{opacity:1}
+.mob-nav-panel{position:fixed;right:0;top:0;bottom:0;z-index:801;width:min(300px,90vw);background:var(--dark);padding:20px 0;overflow-y:auto;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s cubic-bezier(.25,.8,.25,1);box-shadow:-10px 0 40px rgba(0,0,0,.3)}
+.mob-nav-panel.open{transform:translateX(0)}
+.mob-nav-logo{display:flex;align-items:center;justify-content:space-between;padding:0 20px 16px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:10px}
+.mob-nav-close{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);border:none;color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+.mob-nav-a{display:flex;align-items:center;gap:12px;padding:13px 20px;color:rgba(255,255,255,.75);font-size:15px;font-weight:500;transition:all .15s;text-decoration:none}
+.mob-nav-a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mob-nav-divider{height:1px;background:rgba(255,255,255,.07);margin:8px 20px}
+.mob-nav-actions{padding:16px 20px;margin-top:auto;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.07)}
+/* HERO */
+#hero{background:var(--dark);color:#fff;padding:88px 0 72px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px}
+.hero-blob-1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(191,62,34,.15) 0%,transparent 68%);pointer-events:none}
+.hero-blob-2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(126,204,154,.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-size:11.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--green)}
+.hero-eyebrow-line{width:28px;height:2px;background:var(--green);border-radius:2px}
+.hero-title{font-family:var(--fh);font-size:clamp(26px,4.2vw,48px);font-weight:700;line-height:1.13;margin-bottom:20px}
+.hero-title .ht-green{color:var(--green)}.hero-title .ht-red{color:var(--accent)}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.58);line-height:1.78;margin-bottom:28px;max-width:480px}
+.hero-usp{display:flex;flex-direction:column;gap:11px;margin-bottom:36px}
+.hero-usp-item{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:500;color:rgba(255,255,255,.85)}
+.usp-dot{width:28px;height:28px;border-radius:7px;background:rgba(126,204,154,.14);border:1px solid rgba(126,204,154,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:52px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:var(--rl);overflow:hidden}
+.hstat{padding:20px 14px;text-align:center;border-right:1px solid rgba(255,255,255,.08);transition:background .2s;cursor:default}
+.hstat:last-child{border-right:none}.hstat:hover{background:rgba(255,255,255,.05)}
+.hstat-num{font-family:var(--fh);font-size:28px;font-weight:700;color:var(--green);line-height:1;margin-bottom:6px}
+.hstat-lbl{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.4px;line-height:1.4}
+.hero-visual{display:flex;flex-direction:column;gap:12px}
+.hero-cat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--rl);padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:all .22s;text-decoration:none;color:#fff}
+.hero-cat-card:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.2);transform:translateX(5px)}
+.hero-cat-card.is-featured{background:rgba(191,62,34,.18);border-color:rgba(191,62,34,.3)}
+.hero-cat-card.is-featured:hover{background:rgba(191,62,34,.25);border-color:rgba(191,62,34,.45)}
+.hcc-icon{width:50px;height:50px;border-radius:12px;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.is-featured .hcc-icon{background:rgba(191,62,34,.25)}
+.hcc-info{flex:1;min-width:0}.hcc-title{font-size:14px;font-weight:600;margin-bottom:3px}
+.hcc-sub{font-size:12px;color:rgba(255,255,255,.5);line-height:1.4}
+.hcc-price{font-family:var(--fh);font-size:15px;font-weight:700;color:var(--green);white-space:nowrap;flex-shrink:0}
+.is-featured .hcc-price{color:#ff9077}
+.hero-trust{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:12px 16px;font-size:12.5px;color:rgba(255,255,255,.55);margin-top:2px}
+.hero-trust strong{color:rgba(255,255,255,.88)}
+/* CATEGORIES */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:var(--text)}
+.cat-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.cat-media{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cat-card[data-cat="carport"] .cat-media{background:linear-gradient(140deg,#1a3b24,#2d6038,#1f4a2b)}
+.cat-card[data-cat="garage"] .cat-media{background:linear-gradient(140deg,#1c2420,#2a3830,#192c1e)}
+.cat-card[data-cat="gates"] .cat-media{background:linear-gradient(140deg,#1a2135,#263250,#151e3a)}
+.cat-media::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:36px 36px}
+.cat-media-icon{font-size:68px;position:relative;z-index:1;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4))}
+.cat-media-badge{position:absolute;top:12px;left:12px;z-index:2}
+.cat-media-shimmer{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.07) 0%,transparent 50%,rgba(0,0,0,.1) 100%)}
+.cat-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.cat-title{font-family:var(--fh);font-size:16px;font-weight:700;color:var(--dark)}
+.cat-desc{font-size:13px;color:var(--muted);line-height:1.68;flex:1}
+.cat-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ctag{padding:4px 11px;border-radius:20px;font-size:11px;font-weight:500;background:var(--tag);color:var(--muted)}
+.cat-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);margin-top:4px}
+.cat-price-lbl{font-size:10.5px;color:var(--muted);margin-bottom:2px}
+.cat-price{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--accent)}
+.cat-price small{font-size:12px;font-family:var(--fb);color:var(--muted)}
+.cat-arrow-btn{width:40px;height:40px;border-radius:10px;background:var(--dark);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,transform .15s;flex-shrink:0}
+.cat-arrow-btn:hover{background:var(--dark-h);transform:scale(1.06)}
+/* BENEFITS */
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ben-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:24px;display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s}
+.ben-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.ben-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ben-icon.red{background:#FFEDE8;color:var(--accent)}.ben-icon.green{background:#E8F5EE;color:var(--success)}
+.ben-icon.gold{background:var(--gold-bg);color:var(--gold)}.ben-icon.dark{background:var(--tag);color:var(--dark)}
+.ben-icon.blue{background:#E6F3FB;color:#0a5c8a}
+.ben-title{font-family:var(--fh);font-size:14px;font-weight:600;color:var(--dark)}
+.ben-desc{font-size:13px;color:var(--muted);line-height:1.65}
+/* CALCULATOR */
+#calculator{background:var(--dark);color:#fff;padding:80px 0}
+.calc-tabs{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:5px;margin-bottom:36px}
+.ctab{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;height:50px;border-radius:9px;border:none;background:transparent;color:rgba(255,255,255,.55);font-size:13.5px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--fb);white-space:nowrap}
+.ctab:hover{color:#fff;background:rgba(255,255,255,.07)}
+.ctab.active{background:var(--accent);color:#fff;box-shadow:0 4px 18px rgba(191,62,34,.35)}
+.ctab-icon{font-size:20px}
+.calc-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.calc-form-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--rl);padding:28px;display:flex;flex-direction:column;gap:20px}
+.calc-form-title{font-family:var(--fh);font-size:15px;font-weight:600;margin-bottom:4px}
+.calc-form-sub{font-size:13px;color:rgba(255,255,255,.5)}
+.pill-group{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:8px 16px;border-radius:20px;border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--fb)}
+.pill:hover{border-color:rgba(255,255,255,.35);color:#fff}
+.pill.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 3px 12px rgba(191,62,34,.3)}
+.dim-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dim-wrap{display:flex;flex-direction:column;gap:6px}
+.dim-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.dim-input{height:44px;border-radius:8px;border:1.5px solid rgba(255,255,255,.15);padding:0 14px;font-size:15px;font-weight:600;outline:none;background:rgba(255,255,255,.07);color:#fff;transition:border-color .2s}
+.dim-input:focus{border-color:rgba(255,255,255,.4)}
+.dim-unit{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px;align-self:flex-end}
+.calc-result-panel{background:var(--surface);border-radius:var(--rl);padding:28px;display:flex;flex-direction:column;gap:20px;position:sticky;top:80px;color:var(--text)}
+.crp-title{font-family:var(--fh);font-size:15px;font-weight:600;color:var(--dark);margin-bottom:2px}
+.crp-sub{font-size:13px;color:var(--muted)}
+.crp-breakdown{display:flex;flex-direction:column;gap:8px;padding:16px;background:var(--bg);border-radius:var(--r)}
+.crp-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
+.crp-row.total{border-top:2px solid var(--border);padding-top:12px;margin-top:4px;font-weight:700;font-size:15px}
+.crp-row.total .crp-val{color:var(--accent);font-family:var(--fh)}
+.crp-price-main{background:linear-gradient(135deg,var(--dark),var(--dark-h));border-radius:var(--r);padding:20px;text-align:center;color:#fff}
+.crp-price-label{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.crp-price-value{font-family:var(--fh);font-size:32px;font-weight:700;color:var(--green);line-height:1;margin-bottom:6px}
+.crp-price-note{font-size:11.5px;color:rgba(255,255,255,.5)}
+.crp-disclaimer{font-size:11.5px;color:var(--muted);line-height:1.6;background:var(--gold-bg);border:1px solid #f0d060;border-radius:8px;padding:10px 13px}
+/* PROJECT SHOWCASE — статичные pcard */
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .22s,box-shadow .22s}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.pthumb{aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pthumb.t-carport-1{background:linear-gradient(135deg,#1f4a2b,#2d6038,#1a3b24)}
+.pthumb.t-carport-2{background:linear-gradient(135deg,#2b4a20,#3d6030,#1f3a18)}
+.pthumb.t-garage-1{background:linear-gradient(135deg,#1e2e24,#2c3e30,#192c1e)}
+.pthumb.t-garage-2{background:linear-gradient(135deg,#22302a,#303e36,#1a2820)}
+.pthumb.t-gate-1{background:linear-gradient(135deg,#1d2840,#283a5a,#192030)}
+.pthumb.t-gate-2{background:linear-gradient(135deg,#20253a,#2e3550,#18202e)}
+.pthumb::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.pthumb::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,transparent 50%,rgba(0,0,0,.15) 100%)}
+.pthumb-icon{font-size:52px;position:relative;z-index:1;filter:drop-shadow(0 4px 14px rgba(0,0,0,.4))}
+.pthumb .pbadge-top{position:absolute;top:10px;left:10px;z-index:3}
+.pthumb .pbadge-br{position:absolute;bottom:10px;right:10px;z-index:3;font-size:10px;font-weight:500;background:rgba(0,0,0,.45);color:#fff;padding:3px 9px;border-radius:6px;backdrop-filter:blur(4px)}
+.pinfo{padding:14px;flex:1;display:flex;flex-direction:column;gap:4px}
+.ptitle{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
+.ploc{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.ptag{padding:2px 8px;border-radius:12px;font-size:10.5px;background:var(--tag);color:var(--muted)}
+.pcard-cta{margin:0 12px 12px;height:36px;border-radius:8px;background:var(--dark);color:#fff;border:none;cursor:pointer;font-size:12.5px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .15s}
+.pcard-cta:hover{background:var(--dark-h)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.process-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;z-index:0;background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 8px,transparent 8px,transparent 18px)}
+.proc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:22px;text-align:center;position:relative;z-index:1;transition:transform .2s,box-shadow .2s}
+.proc-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.proc-num{width:52px;height:52px;border-radius:14px;background:var(--dark);color:#fff;font-family:var(--fh);font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.proc-card:nth-child(2) .proc-num{background:var(--accent)}
+.proc-card:nth-child(3) .proc-num{background:var(--success)}
+.proc-card:nth-child(4) .proc-num{background:var(--gold)}
+.proc-icon{font-size:28px;margin-bottom:12px}
+.proc-title{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.proc-desc{font-size:12.5px;color:var(--muted);line-height:1.65}
+/* LEAD */
+#lead{background:var(--dark);color:#fff;padding:88px 0;position:relative;overflow:hidden}
+#lead::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px}
+.lead-blob{position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(191,62,34,.12) 0%,transparent 68%);pointer-events:none}
+.lead-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.lead-promise{display:flex;flex-direction:column;gap:12px;margin:28px 0 32px}
+.lead-promise-item{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,.82)}
+.lead-promise-icon{width:34px;height:34px;border-radius:8px;flex-shrink:0;background:rgba(126,204,154,.14);border:1px solid rgba(126,204,154,.2);display:flex;align-items:center;justify-content:center;color:var(--green)}
+.lead-tg-box{display:flex;align-items:center;gap:14px;background:rgba(34,158,217,.12);border:1px solid rgba(34,158,217,.25);border-radius:var(--r);padding:14px 18px;cursor:pointer;transition:all .2s;text-decoration:none;color:#fff}
+.lead-tg-box:hover{background:rgba(34,158,217,.2);border-color:rgba(34,158,217,.45)}
+.lead-tg-icon{font-size:26px;flex-shrink:0}
+.lead-tg-text{font-size:13px;color:rgba(255,255,255,.7);line-height:1.4}
+.lead-tg-text strong{color:#fff;display:block;margin-bottom:2px}
+.lead-form-card{background:var(--surface);border-radius:var(--rx);padding:32px;color:var(--text);box-shadow:var(--sh-lg)}
+.lead-form-title{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.lead-form-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.55}
+.lead-form{display:flex;flex-direction:column;gap:14px}
+.lead-form-type{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.lft-btn{flex:1;min-width:80px;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface2);font-size:12px;font-weight:500;cursor:pointer;text-align:center;transition:all .15s;color:var(--text);font-family:var(--fb)}
+.lft-btn:hover{border-color:var(--dark)}
+.lft-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.lead-submit{height:50px;border-radius:10px;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;font-family:var(--fb)}
+.lead-submit:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 8px 24px rgba(191,62,34,.3)}
+.lead-submit:active{transform:translateY(0)}
+.lead-form-note{font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+.lead-success{display:none;text-align:center;padding:32px 0}
+.lead-success .tick{font-size:52px;margin-bottom:16px}
+.lead-success h3{font-family:var(--fh);font-size:18px;color:var(--dark);margin-bottom:10px}
+.lead-success p{font-size:13.5px;color:var(--muted);line-height:1.65}
+/* FOOTER */
+#footer{background:var(--dark-h);color:#fff;padding:52px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .logo{margin-bottom:14px}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.5);line-height:1.68;max-width:240px;margin-bottom:20px}
+.footer-socials{display:flex;gap:8px}
+.footer-social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:16px;transition:all .15s;border:none;cursor:pointer}
+.footer-social-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.footer-link{display:block;font-size:13.5px;color:rgba(255,255,255,.6);padding:5px 0;transition:color .15s;text-decoration:none}
+.footer-link:hover{color:#fff}
+.footer-contact-item{display:flex;align-items:center;gap:9px;font-size:13.5px;color:rgba(255,255,255,.6);padding:5px 0}
+.footer-contact-item a{color:inherit;transition:color .15s;text-decoration:none}
+.footer-contact-item a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-badges{display:flex;gap:8px;flex-wrap:wrap}
+.fbadge{padding:4px 12px;border-radius:6px;font-size:11px;font-weight:500;background:rgba(255,255,255,.07);color:rgba(255,255,255,.45)}
+/* LEAD MODAL */
+.movl{position:fixed;inset:0;z-index:950;background:rgba(15,20,14,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+.movl.open{display:flex}
+.mbox{background:var(--surface);border-radius:var(--rx);width:100%;max-width:520px;padding:36px;animation:mboxIn .24s cubic-bezier(.34,1.2,.64,1);position:relative;box-shadow:var(--sh-lg)}
+@keyframes mboxIn{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mbox-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:8px;background:var(--surface2);border:none;cursor:pointer;font-size:18px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.mbox-close:hover{background:var(--tag)}
+/* FLOAT CTA */
+#float-cta{position:fixed;bottom:28px;right:28px;z-index:700;display:none;flex-direction:column;align-items:flex-end;gap:10px}
+#float-cta.visible{display:flex}
+.float-btn{display:flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:50px;border:none;cursor:pointer;font-size:14px;font-weight:600;font-family:var(--fb);box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s}
+.float-btn-main{background:var(--accent);color:#fff}
+.float-btn-main:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 12px 36px rgba(191,62,34,.35)}
+.float-btn-tg{background:var(--tg);color:#fff;height:44px;font-size:13px}
+.float-btn-tg:hover{background:#1a8fc3;transform:translateY(-2px)}
+/* TOAST */
+#toast-container{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:990;display:flex;flex-direction:column;gap:8px;pointer-events:none;width:min(420px,calc(100vw - 32px))}
+.toast{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:var(--r);font-size:13.5px;font-weight:500;color:#fff;pointer-events:auto;animation:toastIn .3s cubic-bezier(.34,1.2,.64,1)}
+@keyframes toastIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.toast.out{animation:toastOut .3s ease forwards}
+@keyframes toastOut{to{opacity:0;transform:translateY(8px) scale(.96)}}
+.toast-success{background:var(--success)}.toast-error{background:var(--accent)}.toast-info{background:var(--dark)}
+/* ANIMATIONS */
+[data-anim]{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+[data-anim].in-view{opacity:1;transform:translateY(0)}
+[data-anim-delay="1"]{transition-delay:.1s}[data-anim-delay="2"]{transition-delay:.2s}
+[data-anim-delay="3"]{transition-delay:.3s}[data-anim-delay="4"]{transition-delay:.4s}
+[data-anim-delay="5"]{transition-delay:.5s}
+
+/* ═══ PORTFOLIO CASE MODAL ═══════════════════════════════ */
+#case-modal-ovl{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(4,4,14,.88);
+  display:none; /* JS переключает на flex */
+  align-items:center;justify-content:center;
+  padding:16px;overflow-y:auto;
+  opacity:0;transition:opacity .22s ease;
+}
+@supports(backdrop-filter:blur(1px)){
+  #case-modal-ovl{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(4,4,14,.78)}
+}
+#case-modal-ovl.sc-visible{opacity:1}
+#case-modal-box{
+  position:relative;background:rgb(11,11,24);
+  border:1px solid rgba(255,255,255,.09);border-radius:20px;
+  width:100%;max-width:920px;
+  display:grid;grid-template-columns:1fr 1fr;
+  max-height:88vh;overflow:hidden;
+  box-shadow:0 40px 120px rgba(0,0,0,.7);
+  transform:scale(.94) translateY(16px);
+  transition:transform .28s cubic-bezier(.34,1.2,.64,1);
+}
+#case-modal-ovl.sc-visible #case-modal-box{transform:scale(1) translateY(0)}
+#case-close-btn{
+  position:absolute;top:12px;right:12px;z-index:20;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.7);font-size:16px;cursor:pointer;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s;
+}
+#case-close-btn:hover{background:rgba(255,255,255,.16);color:#fff}
+#case-gallery-col{
+  background:rgb(7,7,18);display:flex;flex-direction:column;
+  min-height:300px;max-height:88vh;overflow:hidden;
+}
+#case-gallery-viewport{flex:1;position:relative;overflow:hidden;cursor:zoom-in;min-height:0}
+#case-gallery-track{
+  display:flex;height:100%;min-height:340px;
+  transition:transform .35s cubic-bezier(.25,.8,.25,1);will-change:transform;
+}
+.sc-slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.sc-slide img{width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
+.sc-slide-placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;color:rgba(255,255,255,.18);font-size:13px;
+  width:100%;height:100%;min-height:300px;padding:40px;text-align:center;line-height:1.5;
+}
+.sc-slide-placeholder svg{opacity:.15}
+.sc-arr{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);
+  color:#fff;cursor:pointer;z-index:10;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,transform .15s;
+}
+.sc-arr:hover{background:rgba(255,255,255,.24);transform:translateY(-50%) scale(1.08)}
+.sc-arr:disabled{opacity:.2;pointer-events:none;cursor:default}
+.sc-arr-prev{left:10px}.sc-arr-next{right:10px}
+#case-gal-counter{
+  position:absolute;bottom:14px;right:12px;z-index:5;
+  background:rgba(0,0,0,.55);color:rgba(255,255,255,.75);
+  font-size:11px;padding:3px 10px;border-radius:20px;pointer-events:none;display:none;
+}
+#case-gal-dots{
+  display:flex;justify-content:center;align-items:center;gap:6px;
+  padding:10px 0 12px;flex-shrink:0;background:rgb(7,7,18);min-height:36px;
+}
+.sc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;border:none;padding:0;transition:all .2s ease;flex-shrink:0}
+.sc-dot.active{background:rgba(255,255,255,.9);width:18px;border-radius:3px}
+#case-content-col{
+  padding:28px 26px 24px;overflow-y:auto;max-height:88vh;
+  display:flex;flex-direction:column;gap:18px;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent;
+}
+#case-content-col::-webkit-scrollbar{width:4px}
+#case-content-col::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px}
+.cc-header-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.cc-badge{font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:99px;white-space:nowrap}
+.cc-client{font-size:.68rem;color:rgb(74,74,106);line-height:1.4;text-align:right}
+.cc-title{font-size:1.1rem;font-weight:800;color:rgb(240,240,255);line-height:1.3;margin:0}
+.cc-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cc-metric{text-align:center;padding:12px 6px;border-radius:12px}
+.cc-metric-val{font-family:"JetBrains Mono",monospace;font-size:1rem;font-weight:800;line-height:1}
+.cc-metric-lbl{font-size:.62rem;color:rgb(74,74,106);margin-top:4px;line-height:1.3}
+.cc-section-lbl{font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgb(74,74,106);margin-bottom:7px}
+.cc-section-text{font-size:.8rem;color:rgb(139,139,167);line-height:1.72;margin:0}
+.cc-results{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.cc-results li{display:flex;align-items:flex-start;gap:9px;font-size:.8rem;color:rgb(139,139,167);line-height:1.5}
+.cc-results li::before{content:'→';font-family:"JetBrains Mono",monospace;color:rgb(74,74,106);flex-shrink:0;margin-top:1px}
+.cc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.cc-tag{font-size:.68rem;padding:3px 9px;border-radius:6px;border:1px solid rgba(255,255,255,.07);color:rgb(74,74,106);background:rgba(255,255,255,.025)}
+.cc-cta-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cc-cta-text{font-size:.8rem;color:rgb(139,139,167);line-height:1.5}
+.cc-cta-text strong{color:rgb(210,210,240);display:block;margin-bottom:2px;font-size:.82rem}
+.cc-cta-btn{flex-shrink:0;padding:9px 18px;border-radius:8px;font-size:.78rem;font-weight:700;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit}
+.cc-cta-btn:hover{opacity:.82}
+
+/* PORTFOLIO CARDS */
+.sc-pcard{background:rgb(13,13,28);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;outline:none}
+.sc-pcard:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.45)}
+.sc-pcard:focus-visible{outline:2px solid rgb(108,99,255);outline-offset:3px}
+.sc-pcard-stripe{height:3px}
+.sc-pcard-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.sc-pcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:14px}
+.sc-pcard-cat{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px;flex-shrink:0}
+.sc-pcard-client{font-size:.68rem;color:rgb(74,74,106);text-align:right;line-height:1.4}
+.sc-pcard-title{font-size:.95rem;font-weight:800;color:rgb(240,240,255);line-height:1.3;margin-bottom:10px}
+.sc-pcard-desc{font-size:.8rem;color:rgb(139,139,167);line-height:1.65;margin-bottom:18px;flex:1}
+.sc-pcard-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.sc-metric{text-align:center;padding:10px 6px;border-radius:10px}
+.sc-metric-val{font-family:"JetBrains Mono",monospace;font-size:.85rem;font-weight:800;line-height:1}
+.sc-metric-lbl{font-size:.65rem;color:rgb(74,74,106);margin-top:3px;line-height:1.3}
+.sc-pcard-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.sc-pcard-tag{font-size:.68rem;padding:3px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.07);color:rgb(74,74,106);background:rgba(255,255,255,.025)}
+.sc-pcard-cta{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 14px;border-radius:8px;font-size:.75rem;font-weight:700;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(240,240,255,.6);transition:all .15s;pointer-events:none;align-self:flex-start}
+.sc-pcard:hover .sc-pcard-cta{background:rgba(255,255,255,.1);color:rgb(240,240,255);border-color:rgba(255,255,255,.22)}
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════ */
+@media(max-width:1024px){
+  .hdr-nav{display:none}.mob-toggle{display:flex}.hdr-phone{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:48px}.hero-visual{order:-1}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-stats .hstat:nth-child(2){border-right:none}
+  .hero-stats .hstat:nth-child(1),.hero-stats .hstat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.08)}
+  .cat-grid{grid-template-columns:1fr 1fr}.ben-grid{grid-template-columns:1fr 1fr}
+  .calc-inner{grid-template-columns:1fr}.calc-result-panel{position:static}
+  .pgrid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}
+  .process-grid::before{display:none}.lead-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  #case-modal-box{grid-template-columns:1fr;border-radius:16px;max-height:94vh}
+  #case-gallery-col{min-height:200px;max-height:240px}
+  #case-gallery-track{min-height:200px}
+  #case-content-col{max-height:calc(94vh - 240px)}
+}
+@media(max-width:768px){
+  .container{padding:0 16px}#hero{padding:56px 0 48px}
+  .hero-title{font-size:clamp(22px,7vw,32px)}.hero-cat-card{padding:14px 16px}
+  .cat-grid{grid-template-columns:1fr}.ben-grid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}
+  .calc-tabs{flex-direction:column;gap:6px}.ctab{height:44px}
+  .dim-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(2,1fr)}
+  .lead-inner{gap:40px}.mbox{padding:24px 20px}.frow2{grid-template-columns:1fr}
+  #float-cta{bottom:20px;right:16px}
+}
+@media(max-width:480px){
+  .ben-grid{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:flex-start}
+  .hero-ctas .btn{width:100%;max-width:320px}.cat-media{height:180px}.hstat-num{font-size:22px}
+}
+@media(max-width:420px){
+  #case-modal-ovl{padding:0;align-items:flex-end}
+  #case-modal-box{border-radius:18px 18px 0 0;max-height:96vh}
+  #case-gallery-col{min-height:180px;max-height:200px}
+  #case-content-col{max-height:calc(96vh - 200px)}
+}
+@supports not(backdrop-filter:blur(1px)){
+  #case-modal-ovl{background:rgba(4,4,14,.96)}
+  .mob-nav-ovl{background:rgba(0,0,0,.85)}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div id="ticker"><div class="ticker-track" id="ticker-track"><span class="ticker-item"><span class="ticker-dot"></span>⚡ Монтаж навесов и ворот за 1 день — без выходных</span><span class="ticker-item"><span class="ticker-dot"></span>🛡️ Гарантия 10 лет на все конструкции — письменно</span><span class="ticker-item"><span class="ticker-dot"></span>🏭 Собственное производство · Цены без наценок посредников</span><span class="ticker-item"><span class="ticker-dot"></span>📐 Бесплатный выезд и замер в день обращения</span><span class="ticker-item"><span class="ticker-dot"></span>🚗 Карпорт из поликарбоната 5×4 м — от 28 000 ₽</span><span class="ticker-item"><span class="ticker-dot"></span>🏠 Сборный утеплённый гараж 4×6 м — от 78 000 ₽</span><span class="ticker-item"><span class="ticker-dot"></span>🚪 Откатные ворота с автоматикой — от 66 000 ₽</span><span class="ticker-item"><span class="ticker-dot"></span>✅ Официальный договор с каждым клиентом</span><span class="ticker-item"><span class="ticker-dot"></span>⚡ Монтаж навесов и ворот за 1 день — без выходных</span><span class="ticker-item"><span class="ticker-dot"></span>🛡️ Гарантия 10 лет на все конструкции — письменно</span><span class="ticker-item"><span class="ticker-dot"></span>🏭 Собственное производство · Цены без наценок посредников</span><span class="ticker-item"><span class="ticker-dot"></span>📐 Бесплатный выезд и замер в день обращения</span><span class="ticker-item"><span class="ticker-dot"></span>🚗 Карпорт из поликарбоната 5×4 м — от 28 000 ₽</span><span class="ticker-item"><span class="ticker-dot"></span>🏠 Сборный утеплённый гараж 4×6 м — от 78 000 ₽</span><span class="ticker-item"><span class="ticker-dot"></span>🚪 Откатные ворота с автоматикой — от 66 000 ₽</span><span class="ticker-item"><span class="ticker-dot"></span>✅ Официальный договор с каждым клиентом</span></div></div>
+
+<!-- HEADER -->
+<header id="header" class="scrolled">
+  <div class="container">
+    <div class="hdr-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">⚙️</div>
+        Steel<em>Craft</em>
+      </a>
+      <nav class="hdr-nav">
+        <a href="#categories" class="nav-a">Продукция</a>
+        <a href="#benefits" class="nav-a">О компании</a>
+        <a href="#calculator" class="nav-a">Калькулятор</a>
+        <a href="#projects" class="nav-a active">Проекты</a>
+        <a href="#process" class="nav-a">Как работаем</a>
+        <a href="#lead" class="nav-a">Контакты</a>
+      </nav>
+      <div class="hdr-right">
+        <a href="tel:+78001234567" class="hdr-phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg>
+          8 800 123-45-67
+        </a>
+        <button class="btn-sm btn-sm-ghost" onclick="openModal()">Бесплатный замер</button>
+        <button class="btn-sm btn-sm-accent" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Рассчитать</button>
+        <button class="mob-toggle" id="mob-toggle" onclick="toggleMobileNav()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav-ovl" id="mob-nav-ovl" onclick="closeMobileNav()"></div>
+<div class="mob-nav-panel" id="mob-nav-panel">
+  <div class="mob-nav-logo">
+    <div class="logo" style="font-size:15px">
+      <div class="logo-mark" style="width:32px;height:32px;font-size:14px">⚙️</div>
+      Steel<span style="color:var(--green)">Craft</span>
+    </div>
+    <button class="mob-nav-close" onclick="closeMobileNav()">✕</button>
+  </div>
+  <a href="#categories" class="mob-nav-a" onclick="closeMobileNav()">Продукция</a>
+  <a href="#benefits" class="mob-nav-a" onclick="closeMobileNav()">О компании</a>
+  <a href="#calculator" class="mob-nav-a" onclick="closeMobileNav()">Калькулятор</a>
+  <a href="#projects" class="mob-nav-a" onclick="closeMobileNav()">Проекты</a>
+  <a href="#process" class="mob-nav-a" onclick="closeMobileNav()">Как работаем</a>
+  <div class="mob-nav-divider"></div>
+  <a href="tel:+78001234567" class="mob-nav-a">8 800 123-45-67</a>
+  <div class="mob-nav-actions">
+    <button class="btn btn-accent" style="width:100%;height:46px" onclick="openModal();closeMobileNav()">Бесплатный замер</button>
+    <a href="https://t.me/steelcraft_official" target="_blank" class="btn btn-tg" style="width:100%;height:46px">Telegram</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          Производитель №1 в регионе
+        </div>
+        <h1 class="hero-title">
+          Навесы, Гаражи<br>и Ворота<br>
+          <span class="ht-green">с гарантией</span> <span class="ht-red">10 лет</span>
+        </h1>
+        <p class="hero-sub">Собственное производство полного цикла — от проекта до монтажа. Доступные цены без посредников. Официальный договор.</p>
+        <ul class="hero-usp">
+          <li class="hero-usp-item">
+            <div class="usp-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            Монтаж любой конструкции за <strong>1 день</strong>
+          </li>
+          <li class="hero-usp-item">
+            <div class="usp-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            Собственное производство — <strong>цены без наценок</strong>
+          </li>
+          <li class="hero-usp-item">
+            <div class="usp-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            Официальный договор и <strong>гарантия 10 лет</strong>
+          </li>
+          <li class="hero-usp-item">
+            <div class="usp-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            Бесплатный выезд и <strong>замер в день обращения</strong>
+          </li>
+        </ul>
+        <div class="hero-ctas">
+          <button class="btn btn-accent" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Рассчитать стоимость</button>
+          <button class="btn btn-outline-white" onclick="openModal()">Бесплатный замер</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat"><div class="hstat-num" data-counter="500" data-suffix="+" data-animated="true">500+</div><div class="hstat-lbl">Завершённых проектов</div></div>
+          <div class="hstat"><div class="hstat-num" data-counter="10" data-suffix=" лет" data-animated="true">10 лет</div><div class="hstat-lbl">Гарантия на конструкции</div></div>
+          <div class="hstat"><div class="hstat-num" data-counter="1" data-suffix=" день" data-animated="true">1 день</div><div class="hstat-lbl">Монтаж любого объекта</div></div>
+          <div class="hstat"><div class="hstat-num" data-counter="0" data-suffix=" ₽" data-animated="true">0 ₽</div><div class="hstat-lbl">Выезд и замер</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+    <a href="#categories" class="hero-cat-card is-featured" onclick="event.preventDefault();document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+      <div class="hcc-icon">🏗️</div>
+      <div class="hcc-info">
+        <div class="hcc-title">Навесы и карпорты</div>
+        <div class="hcc-sub">Поликарбонат · Профнастил · Мягкая кровля</div>
+      </div>
+      <div class="hcc-price">от 8 000 ₽ / м²</div>
+    </a>
+
+    <a href="#categories" class="hero-cat-card" onclick="event.preventDefault();document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+      <div class="hcc-icon">🏠</div>
+      <div class="hcc-info">
+        <div class="hcc-title">Сборные гаражи</div>
+        <div class="hcc-sub">Стандарт · Утеплённые · Любые размеры</div>
+      </div>
+      <div class="hcc-price">от 25 000 ₽ / м²</div>
+    </a>
+
+    <a href="#categories" class="hero-cat-card" onclick="event.preventDefault();document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+      <div class="hcc-icon">🚪</div>
+      <div class="hcc-info">
+        <div class="hcc-title">Ворота и автоматика</div>
+        <div class="hcc-sub">Откатные · Распашные · Секционные</div>
+      </div>
+      <div class="hcc-price">от 90 000 ₽</div>
+    </a>
+
+    <div class="hero-trust">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <span><strong>Лицензированное производство</strong> · ГОСТ Р 52289 · Официальный договор с каждым клиентом</span>
+    </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" class="section">
+  <div class="container">
+    <div class="section-head centered in-view" data-anim="">
+      <span class="section-label">Продукция</span>
+      <h2 class="section-title">Три направления — одно качество</h2>
+      <p class="section-sub">Проектируем, производим и монтируем на собственных мощностях.</p>
+    </div>
+    <div class="cat-grid">
+      <article class="cat-card in-view" data-cat="carport" data-anim="" data-anim-delay="1" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'});setCalcTab('carport')">
+        <div class="cat-media"><div class="cat-media-shimmer"></div><div class="cat-media-icon">🏗️</div><div class="cat-media-badge"><span class="badge badge-accent">Хит продаж</span></div></div>
+        <div class="cat-body">
+          <h3 class="cat-title">Навесы и карпорты</h3>
+          <p class="cat-desc">Защита автомобиля, зоны отдыха или въезда. Три вида кровли на любой бюджет.</p>
+          <div class="cat-tags"><span class="ctag">Поликарбонат</span><span class="ctag">Профнастил</span><span class="ctag">Мягкая кровля</span></div>
+          <div class="cat-footer">
+            <div><div class="cat-price-lbl">Стоимость от</div><div class="cat-price">8 000 ₽ <small>/ м²</small></div></div>
+            <button class="cat-arrow-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cat-card in-view" data-cat="garage" data-anim="" data-anim-delay="2" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'});setCalcTab('garage')">
+        <div class="cat-media"><div class="cat-media-shimmer"></div><div class="cat-media-icon">🏠</div><div class="cat-media-badge"><span class="badge badge-dark">Собственное производство</span></div></div>
+        <div class="cat-body">
+          <h3 class="cat-title">Сборные гаражи</h3>
+          <p class="cat-desc">Надёжные металлические гаражи заводской сборки. Стандартные и утеплённые.</p>
+          <div class="cat-tags"><span class="ctag">3×5 / 4×6 / 6×9</span><span class="ctag">Утеплённые</span><span class="ctag">Секционные ворота</span></div>
+          <div class="cat-footer">
+            <div><div class="cat-price-lbl">Стоимость от</div><div class="cat-price">25 000 ₽ <small>/ м²</small></div></div>
+            <button class="cat-arrow-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cat-card in-view" data-cat="gates" data-anim="" data-anim-delay="3" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'});setCalcTab('gates')">
+        <div class="cat-media"><div class="cat-media-shimmer"></div><div class="cat-media-icon">🚪</div><div class="cat-media-badge"><span class="badge badge-gold">Автоматика в комплекте</span></div></div>
+        <div class="cat-body">
+          <h3 class="cat-title">Автоматические ворота</h3>
+          <p class="cat-desc">Три типа конструкции с автоматическим приводом. Пульт и фотоэлементы в стоимости.</p>
+          <div class="cat-tags"><span class="ctag">Откатные</span><span class="ctag">Распашные</span><span class="ctag">Секционные</span></div>
+          <div class="cat-footer">
+            <div><div class="cat-price-lbl">Стоимость от</div><div class="cat-price">135 000 ₽ <small>/ комплект</small></div></div>
+            <button class="cat-arrow-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits" class="section section-alt">
+  <div class="container">
+    <div class="section-head centered in-view" data-anim="">
+      <span class="section-label green">О компании</span>
+      <h2 class="section-title">Почему выбирают Steel Craft</h2>
+      <p class="section-sub">Работаем с 2014 года. Более 500 довольных клиентов по всему региону.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card in-view" data-anim="" data-anim-delay="1">
+        <div class="ben-icon dark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path></svg></div>
+        <div><div class="ben-title">Собственное производство</div><div class="ben-desc">Полный производственный цикл на 2 400 м². Закупаем металл напрямую с заводов — экономия до 30%.</div></div>
+      </div>
+      <div class="ben-card in-view" data-anim="" data-anim-delay="2">
+        <div class="ben-icon green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <div><div class="ben-title">Монтаж за 1 день</div><div class="ben-desc">Навес, ворота или гараж — устанавливаем за одну смену. Приехали утром, сдали вечером.</div></div>
+      </div>
+      <div class="ben-card in-view" data-anim="" data-anim-delay="3">
+        <div class="ben-icon red"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+        <div><div class="ben-title">Официальный договор</div><div class="ben-desc">Все работы по договору с указанием сроков, гарантий и штрафных санкций.</div></div>
+      </div>
+      <div class="ben-card in-view" data-anim="" data-anim-delay="1">
+        <div class="ben-icon gold"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+        <div><div class="ben-title">Гарантия 10 лет</div><div class="ben-desc">Письменная гарантия на конструкцию и покраску. Бесплатное обслуживание в течение срока.</div></div>
+      </div>
+      <div class="ben-card in-view" data-anim="" data-anim-delay="2">
+        <div class="ben-icon green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div>
+        <div><div class="ben-title">Бесплатный замер</div><div class="ben-desc">Выезжаем в день обращения без предоплаты. Точный расчёт на месте.</div></div>
+      </div>
+      <div class="ben-card in-view" data-anim="" data-anim-delay="3">
+        <div class="ben-icon blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div>
+        <div><div class="ben-title">Доставка по России</div><div class="ben-desc">Собственный автопарк обеспечивает бережную доставку в любой регион.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" class="section section-dark">
+  <div class="container">
+    <div class="section-head centered in-view" data-anim="">
+      <span class="section-label" style="background:rgba(191,62,34,.25);color:#ff9077">Калькулятор</span>
+      <h2 class="section-title on-dark">Рассчитайте стоимость онлайн</h2>
+      <p class="section-sub on-dark">Выберите тип конструкции и укажите параметры — получите предварительную стоимость.</p>
+    </div>
+
+    <div class="calc-tabs in-view" data-anim="">
+      <button class="ctab active" id="tab-carport" onclick="setCalcTab('carport')" aria-selected="true"><span class="ctab-icon">🏗️</span> Навес / Карпорт</button>
+      <button class="ctab" id="tab-garage" onclick="setCalcTab('garage')" aria-selected="false"><span class="ctab-icon">🏠</span> Гараж</button>
+      <button class="ctab" id="tab-gates" onclick="setCalcTab('gates')" aria-selected="false"><span class="ctab-icon">🚪</span> Ворота</button>
+    </div>
+
+    <div class="calc-inner in-view" data-anim="">
+      <div id="calc-form-area"><div class="calc-form-panel">
+      <div class="calc-form-title">🏗️ Конфигурация навеса</div>
+      <div class="calc-form-sub">Выберите параметры — стоимость обновится автоматически</div>
+      <div class="finp-wrap" style="margin-top:6px">
+        <label class="dim-label">Тип кровли</label>
+        <div class="pill-group">
+
+            <button class="pill active" onclick="setCalcOption('carport','material','polycarbonate')">Поликарбонат сотовый 8 мм</button>
+            <button class="pill " onclick="setCalcOption('carport','material','corrugated')">Профнастил МП-20</button>
+            <button class="pill " onclick="setCalcOption('carport','material','soft')">Мягкая кровля Shinglas</button>
+        </div>
+      </div>
+      <div class="dim-grid">
+        <div class="dim-wrap"><div class="dim-label">Ширина (м)</div><input class="dim-input" type="number" min="2" max="12" step="0.5" value="5" oninput="setCalcDim('carport','width',this.value)"><div class="dim-unit">мин 2 м · макс 12 м</div></div>
+        <div class="dim-wrap"><div class="dim-label">Глубина (м)</div><input class="dim-input" type="number" min="2" max="10" step="0.5" value="4" oninput="setCalcDim('carport','depth',this.value)"><div class="dim-unit">мин 2 м · макс 10 м</div></div>
+      </div>
+      <div class="finp-wrap">
+        <label class="dim-label">Количество опор</label>
+        <div class="pill-group">
+
+            <button class="pill " onclick="setCalcOption('carport','poles',2)">2 опоры (односторонний)</button>
+            <button class="pill active" onclick="setCalcOption('carport','poles',4)">4 опоры (стандарт)</button>
+            <button class="pill " onclick="setCalcOption('carport','poles',6)">6 опор (усиленный)</button>
+        </div>
+      </div>
+    </div></div>
+
+      <div class="calc-result-panel">
+        <div>
+            <div class="crp-title">Предварительный расчёт</div>
+            <div class="crp-sub">Стоимость под ключ (материалы + работа)</div>
+        </div>
+
+        <div class="crp-breakdown">
+          <div class="crp-row">
+            <span>Каркас (5×4=20.0 м²)</span>
+            <span class="crp-val" id="c-area-val">20.0 м²</span>
+          </div>
+          <div class="crp-row">
+            <span>Поликарбонат сотовый 8 мм·20.0 м²</span>
+            <span class="crp-val" id="c-base-val">18&nbsp;000 ₽</span>
+          </div>
+          <div class="crp-row">
+            <span>4 опоры (стандарт)</span>
+            <span class="crp-val" style="color:var(--success)">Включено</span>
+          </div>
+          <div class="crp-row">
+            <span>Выезд замерщика</span>
+            <span class="crp-val" style="color:var(--success)">0 ₽</span>
+          </div>
+          <div class="crp-row total">
+            <span>Итого</span>
+            <span class="crp-val" id="c-total-val">102&nbsp;000 ₽</span>
+          </div>
+        </div>
+
+        <div class="crp-price-main">
+          <div class="crp-price-label">Ориентировочная цена</div>
+          <div class="crp-price-value" id="crp-price-display">от 102&nbsp;000 ₽</div>
+          <div class="crp-price-note">Расчет произведен по ставке 8 000 ₽ / м²</div>
+        </div>
+
+        <div class="crp-disclaimer">💡 В стоимость уже включены все материалы, покраска и сварочные работы на объекте.</div>
+        <button class="btn btn-accent" style="width:100%;height:50px" onclick="openModal()">Забронировать цену по замеру</button>
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROJECTS — динамическая сетка + модальное окно
+     ИСПРАВЛЕНО: убраны статичные pcard, добавлен #pf-grid
+═══════════════════════════════════════════════════════ -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-head in-view" data-anim="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <div>
+        <span class="section-label">Портфолио</span>
+        <h2 class="section-title">Выполненные проекты</h2>
+        <p class="section-sub">Более 500 объектов по всему региону. Нажмите на карточку — откроется подробный кейс.</p>
+      </div>
+      <button class="btn btn-ghost" onclick="openModal()">Обсудить мой проект</button>
+    </div>
+
+    <!-- Фильтры -->
+    <div id="pf-filters" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px">
+    <button style="padding:8px 18px;border-radius:99px;border:1.5px solid var(--accent);background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--fb)" onclick="SC_setFilter('all')">
+      Все проекты
+    </button>
+    <button style="padding:8px 18px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--fb)" onclick="SC_setFilter('Навесы')">
+      Навесы
+    </button>
+    <button style="padding:8px 18px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--fb)" onclick="SC_setFilter('Гаражи')">
+      Гаражи
+    </button>
+    <button style="padding:8px 18px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--fb)" onclick="SC_setFilter('Ворота')">
+      Ворота
+    </button></div>
+
+    <!-- Сетка карточек — заполняется JS -->
+    <div id="pf-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px"></div>
+  </div>
+</section>
+
+<!-- ═══ CASE MODAL — единственный экземпляр в DOM ═══════ -->
+<div id="case-modal-ovl" onclick="if(event.target===this)SC_closeModal()">
+  <div id="case-modal-box">
+
+    <button id="case-close-btn" onclick="SC_closeModal()">✕</button>
+
+    <!-- Галерея (левая колонка) -->
+    <div id="case-gallery-col">
+      <div id="case-gallery-viewport">
+        <div id="case-gallery-track"></div>
+        <button class="sc-arr sc-arr-prev" id="sc-prev" onclick="event.stopPropagation();SC_galStep(-1)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="sc-arr sc-arr-next" id="sc-next" onclick="event.stopPropagation();SC_galStep(1)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <div id="case-gal-counter"></div>
+      </div>
+      <div id="case-gal-dots"></div>
+    </div>
+
+    <!-- Контент (правая колонка) -->
+    <div id="case-content-col"></div>
+
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section id="process" class="section section-alt">
+  <div class="container">
+    <div class="section-head centered in-view" data-anim="">
+      <span class="section-label gold">Как работаем</span>
+      <h2 class="section-title">Четыре шага до готового объекта</h2>
+      <p class="section-sub">Прозрачный процесс без сюрпризов.</p>
+    </div>
+    <div class="process-grid">
+      <div class="proc-card in-view" data-anim="" data-anim-delay="1"><div class="proc-num">01</div><div class="proc-icon">📞</div><div class="proc-title">Заявка и замер</div><div class="proc-desc">Оставляете заявку — выезжаем в день обращения бесплатно.</div></div>
+      <div class="proc-card in-view" data-anim="" data-anim-delay="2"><div class="proc-num">02</div><div class="proc-icon">📐</div><div class="proc-title">Проект и расчёт</div><div class="proc-desc">Готовим 3D-эскиз и точную смету в течение 2 часов.</div></div>
+      <div class="proc-card in-view" data-anim="" data-anim-delay="3"><div class="proc-num">03</div><div class="proc-icon">🏭</div><div class="proc-title">Производство</div><div class="proc-desc">Изготавливаем на собственном заводе за 3–7 дней.</div></div>
+      <div class="proc-card in-view" data-anim="" data-anim-delay="4"><div class="proc-num">04</div><div class="proc-icon">✅</div><div class="proc-title">Монтаж и сдача</div><div class="proc-desc">Монтируем за 1 день. Подписываете акт и получаете гарантийный паспорт.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section id="lead" style="padding:88px 0">
+  <div class="lead-blob"></div>
+  <div class="container">
+    <div class="lead-inner">
+      <div data-anim="" class="in-view">
+        <span class="section-label" style="background:rgba(191,62,34,.25);color:#ff9077">Бесплатно</span>
+        <h2 class="section-title on-dark" style="margin-top:10px">Запишитесь на<br>бесплатный замер</h2>
+        <p class="section-sub on-dark">Специалист приедет, снимет размеры и подготовит расчёт прямо на объекте.</p>
+        <ul class="lead-promise">
+          <li class="lead-promise-item"><div class="lead-promise-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>Выезд специалиста в день обращения</li>
+          <li class="lead-promise-item"><div class="lead-promise-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>Точный расчёт стоимости на месте</li>
+          <li class="lead-promise-item"><div class="lead-promise-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>3D-проект в подарок при заказе</li>
+          <li class="lead-promise-item"><div class="lead-promise-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>Никакого давления — только консультация</li>
+        </ul>
+        <a href="https://t.me/steelcraft_official" target="_blank" class="lead-tg-box">
+          <div class="lead-tg-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="var(--tg)"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.609c-.15.672-.546.836-1.104.52l-3.058-2.252-1.475 1.418c-.163.163-.3.3-.614.3l.218-3.098 5.63-5.084c.245-.218-.053-.339-.38-.121L7.37 14.44l-2.99-.936c-.65-.204-.663-.65.136-.962l11.674-4.503c.543-.196 1.018.133.372.21z"></path></svg></div>
+          <div class="lead-tg-text"><strong>Написать в Telegram</strong>Ответим в течение 5 минут</div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </div>
+      <div data-anim="" data-anim-delay="2" class="in-view">
+        <div class="lead-form-card">
+          <div class="lead-form-title">Бесплатный замер</div>
+          <div class="lead-form-sub">Оставьте контакты — перезвоним в течение 15 минут.</div>
+          <div id="lead-form-body">
+            <div class="finp-wrap" style="margin-bottom:16px">
+              <label>Что вас интересует</label>
+              <div class="lead-form-type">
+                <button class="lft-btn active" data-lft="carport" onclick="selectLeadType(this)">🏗️ Навес</button>
+                <button class="lft-btn" data-lft="garage" onclick="selectLeadType(this)">🏠 Гараж</button>
+                <button class="lft-btn" data-lft="gates" onclick="selectLeadType(this)">🚪 Ворота</button>
+                <button class="lft-btn" data-lft="other" onclick="selectLeadType(this)">🔧 Другое</button>
+              </div>
+            </div>
+            <form class="lead-form" novalidate="">
+              <div class="frow2">
+                <div class="finp-wrap"><label>Ваше имя *</label><input class="finp" id="lf-name" type="text" placeholder="Иван Иванов" autocomplete="given-name"></div>
+                <div class="finp-wrap"><label>Телефон *</label><input class="finp" id="lf-phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
+              </div>
+              <div class="finp-wrap"><label>Пожелания</label><textarea class="ftarea" id="lf-comment" placeholder="Размеры, материал, адрес..." rows="3"></textarea></div>
+              <button type="button" class="lead-submit" onclick="submitLeadForm()">Записаться на бесплатный замер</button>
+              <p class="lead-form-note">Нажимая, вы соглашаетесь с <a href="#" style="color:var(--accent)">политикой конфиденциальности</a>.</p>
+            </form>
+          </div>
+          <div class="lead-success" id="lead-success">
+            <div class="tick">✅</div>
+            <h3>Заявка принята!</h3>
+            <p>Специалист свяжется с вами в течение <strong>15 минут</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="font-size:17px;margin-bottom:14px"><div class="logo-mark" style="width:34px;height:34px;font-size:16px">⚙️</div>Steel<em>Craft</em></div>
+        <p class="footer-tagline">Производство и монтаж навесов, гаражей и ворот с 2014 года. Гарантия 10 лет.</p>
+        <div class="footer-socials">
+          <a href="https://t.me/steelcraft_official" target="_blank" class="footer-social-btn">TG</a>
+          <a href="https://vk.com/steelcraft" target="_blank" class="footer-social-btn">ВК</a>
+          <a href="https://wa.me/78001234567" target="_blank" class="footer-social-btn">WA</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Продукция</div>
+        <a href="#categories" class="footer-link">Навесы из поликарбоната</a>
+        <a href="#categories" class="footer-link">Навесы из профнастила</a>
+        <a href="#categories" class="footer-link">Сборные гаражи</a>
+        <a href="#categories" class="footer-link">Откатные ворота</a>
+        <a href="#categories" class="footer-link">Секционные ворота</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Компания</div>
+        <a href="#benefits" class="footer-link">О нас</a>
+        <a href="#projects" class="footer-link">Портфолио</a>
+        <a href="#process" class="footer-link">Как работаем</a>
+        <a href="#calculator" class="footer-link">Калькулятор</a>
+        <a href="#" class="footer-link">Гарантия</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 9.81 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6z"></path></svg><a href="tel:+78001234567">8 800 123-45-67</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 12 13 2 6"></polyline></svg><a href="mailto:info@steelcraft.ru">info@steelcraft.ru</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>г. Краснодар, ул. Промышленная, 14</span></div>
+        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Пн–Пт 8:00–19:00 · Сб 9:00–17:00</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2014–2025 Steel Craft. Все права защищены.</div>
+      <div class="footer-badges"><span class="fbadge">ГОСТ Р 52289</span><span class="fbadge">Гарантия 10 лет</span><span class="fbadge">Официальный договор</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LEAD FORM MODAL -->
+<div class="movl" id="lead-modal" onclick="handleModalClick(event)">
+  <div class="mbox" onclick="event.stopPropagation()">
+    <button class="mbox-close" onclick="closeModal()">✕</button>
+    <div id="modal-body">
+      <span class="section-label" style="margin-bottom:18px">Бесплатно</span>
+      <h2 style="font-family:var(--fh);font-size:20px;font-weight:700;color:var(--dark);margin-bottom:6px">Записаться на замер</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.55">Выезжаем в день обращения. Расчёт и эскиз — бесплатно.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <button class="lft-btn active" data-mlft="carport" onclick="selectModalType(this)">🏗️ Навес</button>
+        <button class="lft-btn" data-mlft="garage" onclick="selectModalType(this)">🏠 Гараж</button>
+        <button class="lft-btn" data-mlft="gates" onclick="selectModalType(this)">🚪 Ворота</button>
+        <button class="lft-btn" data-mlft="other" onclick="selectModalType(this)">🔧 Другое</button>
+      </div>
+      <form id="modal-form" novalidate="" style="display:flex;flex-direction:column;gap:14px">
+        <div class="frow2">
+          <div class="finp-wrap"><label for="m-name">Имя *</label><input class="finp" id="m-name" type="text" placeholder="Ваше имя" autocomplete="given-name"></div>
+          <div class="finp-wrap"><label for="m-phone">Телефон *</label><input class="finp" id="m-phone" type="tel" placeholder="+7 (900) 000-00-00" autocomplete="tel"></div>
+        </div>
+        <div class="finp-wrap"><label for="m-comment">Пожелания</label><textarea class="ftarea" id="m-comment" placeholder="Размеры, материал, адрес..." style="min-height:75px"></textarea></div>
+        <button type="button" class="lead-submit" onclick="submitModal()">Записаться — это бесплатно</button>
+        <p style="font-size:11px;color:var(--muted);text-align:center">Нажимая, вы соглашаетесь с политикой конфиденциальности</p>
+      </form>
+    </div>
+    <div id="modal-success" style="display:none;text-align:center;padding:32px 0">
+      <div style="font-size:52px;margin-bottom:14px">✅</div>
+      <h3 style="font-family:var(--fh);font-size:18px;color:var(--dark);margin-bottom:10px">Заявка принята!</h3>
+      <p style="font-size:13.5px;color:var(--muted);line-height:1.65">Перезвоним в течение <strong>15 минут</strong>.</p>
+      <a href="https://t.me/steelcraft_official" target="_blank" class="btn btn-tg" style="margin-top:20px">Написать в Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING CTA -->
+<div id="float-cta" class="visible">
+  <a href="https://t.me/steelcraft_official" target="_blank" class="float-btn float-btn-tg">Telegram</a>
+  <button class="float-btn float-btn-main" onclick="openModal()">Бесплатный замер</button>
+</div>
+
+<!-- TOAST -->
+<div id="toast-container"></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   STEEL CRAFT — единый JS-модуль
+   Все функции в одном блоке, без дублирования
+═══════════════════════════════════════════════════════════ */
+const TG_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
+const TG_CHAT_ID   = 'YOUR_CHAT_ID_HERE';
+
+let calcCategory  = 'carport';
+let leadType      = 'carport';
+let modalLeadType = 'carport';
+
+let calcState = {
+  carport: { material: 'polycarbonate', poles: 4, width: 5,  depth: 4   },
+  garage:  { type: 'standard',          door: 'sectional',   width: 4,  depth: 6   },
+  gates:   { type: 'sliding',           auto: 'none',        width: 4,  height: 2.1 }
+};
+
+const CALC = {
+  carport: {
+    materials: {
+      polycarbonate: { label: 'Поликарбонат сотовый 8 мм', perM2: 3800, base: 18000 },
+      corrugated:    { label: 'Профнастил МП-20',           perM2: 2900, base: 15000 },
+      soft:          { label: 'Мягкая кровля Shinglas',     perM2: 4500, base: 22000 }
+    },
+    poles: {
+      2: { label: '2 опоры (односторонний)', add: 0     },
+      4: { label: '4 опоры (стандарт)',      add: 8000  },
+      6: { label: '6 опор (усиленный)',      add: 16000 }
+    }
+  },
+  garage: {
+    types: {
+      standard:  { label: 'Стандартный', base: 55000, perM2: 4200 },
+      insulated: { label: 'Утеплённый',  base: 78000, perM2: 5800 }
+    },
+    doors: {
+      metal:     { label: 'Металлические распашные', add: 0     },
+      sectional: { label: 'Секционные ворота',        add: 22000 },
+      auto:      { label: 'Секционные с автоматикой', add: 45000 }
+    }
+  },
+  gates: {
+    types: {
+      sliding:   { label: 'Откатные',   base: 38000, perM2: 2200 },
+      swinging:  { label: 'Распашные',  base: 28000, perM2: 1800 },
+      sectional: { label: 'Секционные', base: 48000, perM2: 2800 }
+    },
+    automation: {
+      none: { label: 'Без автоматики', add: 0     },
+      yes:  { label: 'С автоматикой',  add: 28000 }
+    }
+  }
+};
+
+/* ── TICKER ─────────────────────────────────────────────── */
+const TICKERS = [
+  '⚡ Монтаж навесов и ворот за 1 день — без выходных',
+  '🛡️ Гарантия 10 лет на все конструкции — письменно',
+  '🏭 Собственное производство · Цены без наценок посредников',
+  '📐 Бесплатный выезд и замер в день обращения',
+  '🚗 Карпорт из поликарбоната 5×4 м — от 28 000 ₽',
+  '🏠 Сборный утеплённый гараж 4×6 м — от 78 000 ₽',
+  '🚪 Откатные ворота с автоматикой — от 66 000 ₽',
+  '✅ Официальный договор с каждым клиентом',
+];
+
+function initTicker() {
+  const track = document.getElementById('ticker-track');
+  if (!track) return;
+  track.innerHTML = [...TICKERS, ...TICKERS]
+    .map(t => `<span class="ticker-item"><span class="ticker-dot"></span>${t}</span>`)
+    .join('');
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+function initHeader() {
+  const header   = document.getElementById('header');
+  const sections = document.querySelectorAll('section[id],footer[id]');
+  const navLinks = document.querySelectorAll('.nav-a');
+
+  const onScroll = () => {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) current = s.id; });
+    navLinks.forEach(l => {
+      const href = l.getAttribute('href')?.replace('#','') || '';
+      l.classList.toggle('active', href === current);
+    });
+    document.getElementById('float-cta')?.classList.toggle('visible', window.scrollY > 600);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+/* ── MOBILE NAV ─────────────────────────────────────────── */
+function toggleMobileNav() {
+  document.getElementById('mob-nav-panel')?.classList.contains('open')
+    ? closeMobileNav() : openMobileNav();
+}
+function openMobileNav() {
+  const ovl = document.getElementById('mob-nav-ovl');
+  const panel = document.getElementById('mob-nav-panel');
+  const btn = document.getElementById('mob-toggle');
+  ovl.style.display = 'block'; panel.style.display = 'flex';
+  requestAnimationFrame(() => { ovl.classList.add('visible'); panel.classList.add('open'); });
+  btn?.classList.add('open'); btn?.setAttribute('aria-expanded','true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  const ovl = document.getElementById('mob-nav-ovl');
+  const panel = document.getElementById('mob-nav-panel');
+  const btn = document.getElementById('mob-toggle');
+  ovl?.classList.remove('visible'); panel?.classList.remove('open');
+  btn?.classList.remove('open'); btn?.setAttribute('aria-expanded','false');
+  document.body.style.overflow = '';
+  setTimeout(() => { if(ovl) ovl.style.display='none'; if(panel) panel.style.display='none'; }, 280);
+}
+
+/* ── COUNTERS ────────────────────────────────────────────── */
+function animateCounter(el, target, suffix) {
+  const start = performance.now();
+  const dur = 1600;
+  const isFloat = target % 1 !== 0;
+  function update(now) {
+    const p = Math.min((now-start)/dur, 1);
+    const e = 1 - Math.pow(1-p, 3);
+    const v = isFloat ? (e*target).toFixed(1) : Math.floor(e*target);
+    el.textContent = Number(v).toLocaleString('ru-RU') + suffix;
+    if (p < 1) requestAnimationFrame(update);
+    else el.textContent = target.toLocaleString('ru-RU') + suffix;
+  }
+  requestAnimationFrame(update);
+}
+function initCounters() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.animated) {
+        e.target.dataset.animated = 'true';
+        animateCounter(e.target, parseFloat(e.target.dataset.counter), e.target.dataset.suffix||'');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-counter]').forEach(el => obs.observe(el));
+}
+
+/* ── SCROLL ANIMATIONS ───────────────────────────────────── */
+function initAnimations() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target);} });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
+}
+
+/* ── CALCULATOR ──────────────────────────────────────────── */
+function setCalcTab(cat) {
+  calcCategory = cat;
+  document.querySelectorAll('.ctab').forEach(b => {
+    const a = b.id === `tab-${cat}`;
+    b.classList.toggle('active', a);
+    b.setAttribute('aria-selected', String(a));
+  });
+  renderCalcForm(); updateCalcResult();
+}
+
+function renderCalcForm() {
+  const area = document.getElementById('calc-form-area');
+  if (!area) return;
+  if (calcCategory === 'carport') {
+    const s = calcState.carport;
+    area.innerHTML = `<div class="calc-form-panel">
+      <div class="calc-form-title">🏗️ Конфигурация навеса</div>
+      <div class="calc-form-sub">Выберите параметры — стоимость обновится автоматически</div>
+      <div class="finp-wrap" style="margin-top:6px">
+        <label class="dim-label">Тип кровли</label>
+        <div class="pill-group">
+          ${Object.entries(CALC.carport.materials).map(([k,m])=>`
+            <button class="pill ${s.material===k?'active':''}" onclick="setCalcOption('carport','material','${k}')">${m.label}</button>`).join('')}
+        </div>
+      </div>
+      <div class="dim-grid">
+        <div class="dim-wrap"><div class="dim-label">Ширина (м)</div><input class="dim-input" type="number" min="2" max="12" step="0.5" value="${s.width}" oninput="setCalcDim('carport','width',this.value)"/><div class="dim-unit">мин 2 м · макс 12 м</div></div>
+        <div class="dim-wrap"><div class="dim-label">Глубина (м)</div><input class="dim-input" type="number" min="2" max="10" step="0.5" value="${s.depth}" oninput="setCalcDim('carport','depth',this.value)"/><div class="dim-unit">мин 2 м · макс 10 м</div></div>
+      </div>
+      <div class="finp-wrap">
+        <label class="dim-label">Количество опор</label>
+        <div class="pill-group">
+          ${Object.entries(CALC.carport.poles).map(([k,p])=>`
+            <button class="pill ${s.poles==k?'active':''}" onclick="setCalcOption('carport','poles',${k})">${p.label}</button>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  } else if (calcCategory === 'garage') {
+    const s = calcState.garage;
+    area.innerHTML = `<div class="calc-form-panel">
+      <div class="calc-form-title">🏠 Конфигурация гаража</div>
+      <div class="calc-form-sub">Укажите тип и размер</div>
+      <div class="finp-wrap" style="margin-top:6px">
+        <label class="dim-label">Тип гаража</label>
+        <div class="pill-group">
+          ${Object.entries(CALC.garage.types).map(([k,t])=>`
+            <button class="pill ${s.type===k?'active':''}" onclick="setCalcOption('garage','type','${k}')">${t.label}</button>`).join('')}
+        </div>
+      </div>
+      <div class="dim-grid">
+        <div class="dim-wrap"><div class="dim-label">Ширина (м)</div><input class="dim-input" type="number" min="2.5" max="9" step="0.5" value="${s.width}" oninput="setCalcDim('garage','width',this.value)"/><div class="dim-unit">стандарт: 3/4/5 м</div></div>
+        <div class="dim-wrap"><div class="dim-label">Глубина (м)</div><input class="dim-input" type="number" min="4" max="12" step="0.5" value="${s.depth}" oninput="setCalcDim('garage','depth',this.value)"/><div class="dim-unit">стандарт: 5/6/8 м</div></div>
+      </div>
+      <div class="finp-wrap">
+        <label class="dim-label">Тип ворот</label>
+        <div class="pill-group">
+          ${Object.entries(CALC.garage.doors).map(([k,d])=>`
+            <button class="pill ${s.door===k?'active':''}" onclick="setCalcOption('garage','door','${k}')">${d.label}</button>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  } else {
+    const s = calcState.gates;
+    area.innerHTML = `<div class="calc-form-panel">
+      <div class="calc-form-title">🚪 Конфигурация ворот</div>
+      <div class="calc-form-sub">Выберите тип и укажите проём</div>
+      <div class="finp-wrap" style="margin-top:6px">
+        <label class="dim-label">Тип ворот</label>
+        <div class="pill-group">
+          ${Object.entries(CALC.gates.types).map(([k,t])=>`
+            <button class="pill ${s.type===k?'active':''}" onclick="setCalcOption('gates','type','${k}')">${t.label}</button>`).join('')}
+        </div>
+      </div>
+      <div class="dim-grid">
+        <div class="dim-wrap"><div class="dim-label">Ширина (м)</div><input class="dim-input" type="number" min="1.5" max="8" step="0.1" value="${s.width}" oninput="setCalcDim('gates','width',this.value)"/><div class="dim-unit">типовые: 3/4/5 м</div></div>
+        <div class="dim-wrap"><div class="dim-label">Высота (м)</div><input class="dim-input" type="number" min="1.6" max="4" step="0.1" value="${s.height}" oninput="setCalcDim('gates','height',this.value)"/><div class="dim-unit">типовые: 2/2.1/2.5 м</div></div>
+      </div>
+      <div class="finp-wrap">
+        <label class="dim-label">Автоматический привод</label>
+        <div class="pill-group">
+          ${Object.entries(CALC.gates.automation).map(([k,a])=>`
+            <button class="pill ${s.auto===k?'active':''}" onclick="setCalcOption('gates','auto','${k}')">${a.label}</button>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  }
+}
+
+function setCalcOption(cat, field, val) { calcState[cat][field]=val; renderCalcForm(); updateCalcResult(); }
+function setCalcDim(cat, field, val)    { calcState[cat][field]=parseFloat(val)||0; updateCalcResult(); }
+
+function updateCalcResult() {
+  let base=0, mat=0, opt=0, bL='—', mL='—', oL='—';
+  if (calcCategory==='carport') {
+    const s=calcState.carport, m=CALC.carport.materials[s.material], p=CALC.carport.poles[s.poles];
+    const a=Math.max(0,s.width)*Math.max(0,s.depth);
+    base=m.base; mat=Math.round(a*m.perM2); opt=p.add;
+    bL=`Каркас (${s.width}×${s.depth}=${a.toFixed(1)} м²)`; mL=`${m.label}·${a.toFixed(1)} м²`; oL=p.label;
+  } else if (calcCategory==='garage') {
+    const s=calcState.garage, t=CALC.garage.types[s.type], d=CALC.garage.doors[s.door];
+    const a=Math.max(0,s.width)*Math.max(0,s.depth);
+    base=t.base; mat=Math.round(a*t.perM2); opt=d.add;
+    bL=`Металлоконструкция ${s.width}×${s.depth} м`; mL=t.label; oL=d.label;
+  } else {
+    const s=calcState.gates, t=CALC.gates.types[s.type], au=CALC.gates.automation[s.auto];
+    const a=Math.max(0,s.width)*Math.max(0,s.height);
+    base=t.base; mat=Math.round(a*t.perM2); opt=au.add;
+    bL=`Полотно ${s.width}×${s.height} м`; mL=t.label; oL=au.label;
+  }
+  const total=base+mat+opt, fmt=n=>n.toLocaleString('ru-RU');
+  const $=id=>document.getElementById(id);
+  if($('c-base-val'))     $('c-base-val').textContent    =fmt(base)+' ₽';
+  if($('c-material-val')) $('c-material-val').textContent=fmt(mat)+' ₽';
+  if($('c-options-val'))  $('c-options-val').textContent =opt>0?fmt(opt)+' ₽':'Включено';
+  if($('c-total-val'))    $('c-total-val').textContent   =fmt(total)+' ₽';
+  if($('crp-price-display')) $('crp-price-display').textContent='от '+fmt(total)+' ₽';
+  const rows=document.querySelectorAll('.crp-row');
+  if(rows[0]) rows[0].querySelector('span').textContent=bL;
+  if(rows[1]) rows[1].querySelector('span').textContent=mL;
+  if(rows[2]) rows[2].querySelector('span').textContent=oL;
+}
+
+/* ── LEAD FORM ───────────────────────────────────────────── */
+function selectLeadType(btn) {
+  document.querySelectorAll('[data-lft]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); leadType=btn.dataset.lft;
+}
+async function submitLeadForm() {
+  const name=document.getElementById('lf-name')?.value.trim();
+  const phone=document.getElementById('lf-phone')?.value.trim();
+  const comment=document.getElementById('lf-comment')?.value.trim()||'';
+  let valid=true;
+  ['lf-name','lf-phone'].forEach(id=>{
+    const el=document.getElementById(id); if(!el) return;
+    const ok=!!el.value.trim(); el.classList.toggle('error',!ok); if(!ok) valid=false;
+  });
+  if(!valid){showToast('Пожалуйста, заполните обязательные поля','error');return;}
+  const btn=document.querySelector('.lead-submit');
+  if(btn){btn.textContent='Отправляем...';btn.disabled=true;}
+  await sendToTelegram({name,phone,comment,type:leadType,source:'section-form'});
+  document.getElementById('lead-form-body').style.display='none';
+  document.getElementById('lead-success').style.display='block';
+  showToast('Заявка принята! Ждите звонка в ближайшие 15 минут.','success');
+}
+
+/* ── MODAL (lead form) ───────────────────────────────────── */
+function openModal() {
+  const modal=document.getElementById('lead-modal'); if(!modal) return;
+  document.getElementById('modal-body').style.display='';
+  document.getElementById('modal-success').style.display='none';
+  document.querySelectorAll('[data-mlft]').forEach(b=>b.classList.remove('active'));
+  document.querySelector('[data-mlft="carport"]')?.classList.add('active');
+  modalLeadType='carport';
+  modal.classList.add('open'); document.body.style.overflow='hidden';
+}
+function closeModal() {
+  document.getElementById('lead-modal')?.classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleModalClick(e) { if(e.target===document.getElementById('lead-modal')) closeModal(); }
+function selectModalType(btn) {
+  document.querySelectorAll('[data-mlft]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); modalLeadType=btn.dataset.mlft;
+}
+async function submitModal() {
+  const name=document.getElementById('m-name')?.value.trim();
+  const phone=document.getElementById('m-phone')?.value.trim();
+  const comment=document.getElementById('m-comment')?.value.trim()||'';
+  let valid=true;
+  ['m-name','m-phone'].forEach(id=>{
+    const el=document.getElementById(id); if(!el) return;
+    const ok=!!el.value.trim(); el.classList.toggle('error',!ok); if(!ok) valid=false;
+  });
+  if(!valid){showToast('Пожалуйста, заполните имя и телефон','error');return;}
+  const btn=document.querySelector('#modal-form .lead-submit');
+  if(btn){btn.textContent='Отправляем...';btn.disabled=true;}
+  await sendToTelegram({name,phone,comment,type:modalLeadType,source:'modal'});
+  document.getElementById('modal-body').style.display='none';
+  document.getElementById('modal-success').style.display='block';
+  showToast('Заявка принята! Звоним в течение 15 минут.','success');
+}
+
+/* ── TELEGRAM ────────────────────────────────────────────── */
+async function sendToTelegram(data) {
+  const labels={carport:'🏗️ Навес/Карпорт',garage:'🏠 Сборный гараж',gates:'🚪 Автоворота',other:'🔧 Другое'};
+  const text=[
+    '🔔 *Новая заявка — Steel Craft*','',
+    `👤 Имя: *${data.name}*`,`📱 Телефон: *${data.phone}*`,
+    `📋 Интерес: ${labels[data.type]||data.type}`,
+    data.comment?`💬 Комментарий: ${data.comment}`:'',
+    `📍 Источник: ${data.source==='modal'?'Всплывающая форма':'Форма на сайте'}`,
+    `⏰ Время: ${new Date().toLocaleString('ru-RU')}`
+  ].filter(Boolean).join('\n');
+  try{await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(4000)});}catch(_){}
+  if(TG_BOT_TOKEN!=='YOUR_BOT_TOKEN_HERE'){
+    try{await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT_ID,text,parse_mode:'Markdown'}),signal:AbortSignal.timeout(5000)});}
+    catch(e){console.warn('[SC] TG fail:',e.message);}
+  }
+}
+
+/* ── TOAST ───────────────────────────────────────────────── */
+function showToast(message, type='info') {
+  const c=document.getElementById('toast-container'); if(!c) return;
+  const t=document.createElement('div');
+  t.className=`toast toast-${type}`;
+  t.setAttribute('role','alert');
+  t.innerHTML=`<span>${type==='success'?'✅':type==='error'?'⚠️':'ℹ️'}</span><span>${message}</span>`;
+  c.appendChild(t);
+  setTimeout(()=>{ t.classList.add('out'); t.addEventListener('animationend',()=>t.remove(),{once:true}); },4000);
+}
+
+/* ── PHONE FORMAT ────────────────────────────────────────── */
+function initPhoneFormat() {
+  document.querySelectorAll('input[type="tel"]').forEach(inp=>{
+    inp.addEventListener('input',function(){
+      let v=this.value.replace(/\D/g,'');
+      if(v.startsWith('8')) v='7'+v.slice(1);
+      if(v.startsWith('7')){
+        const m=v.match(/^7?(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
+        if(m) this.value=['+7 ('+(m[1]||''),m[2]?') '+m[2]:'',m[3]?'-'+m[3]:'',m[4]?'-'+m[4]:''].join('');
+      }
+      this.classList.remove('error');
+    });
+  });
+  document.querySelectorAll('input[type="text"]').forEach(inp=>{
+    inp.addEventListener('input',()=>inp.classList.remove('error'));
+  });
+}
+
+/* ── SMOOTH SCROLL ───────────────────────────────────────── */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener('click',e=>{
+      const t=document.querySelector(link.getAttribute('href')); if(!t) return;
+      e.preventDefault();
+      window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'});
+    });
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PORTFOLIO — ДАННЫЕ КЕЙСОВ
+   Замените images:[] на реальные пути к фото
+═══════════════════════════════════════════════════════════ */
+const SC_CASES = [
+  {
+    cat:'Навесы',accentColor:'rgb(126,204,154)',accentBg:'rgba(126,204,154,0.13)',
+    client:'Частный дом · Краснодар',title:'Двойной карпорт 6×5 м из поликарбоната',
+    desc:'Навес на 2 автомобиля с поликарбонатовой кровлей. Монтаж за 1 день, цвет профиля — RAL 6005.',
+    metrics:[{v:'6×5 м',l:'Размер'},{v:'1 день',l:'Монтаж'},{v:'10 лет',l:'Гарантия'}],
+    problem:'Клиент хотел защитить два автомобиля от осадков. Ограниченный участок — нужна компактная конструкция.',
+    solution:'Разработали проект двойного навеса с общей кровлей. Поликарбонат 8 мм обеспечивает светопроницаемость и защиту от УФ.',
+    results:['Установлено за 1 рабочий день без земляных работ','Конструкция выдерживает снеговую нагрузку до 180 кг/м²','Клиент сэкономил 40% по сравнению с капитальным строением'],
+    tags:['Поликарбонат','Двойной','6×5 м','RAL 6005'],
+    images:[
+      'https://ads.msk.ru/craft/img/portfolio/canopies/canopy-main.webp',
+      'https://ads.msk.ru/craft/img/portfolio/canopies/canopy-bench.webp',
+      'https://ads.msk.ru/craft/img/portfolio/canopies/202604151040.webp',
+    ],
+  },
+  {
+    cat:'Навесы',accentColor:'rgb(126,204,154)',accentBg:'rgba(126,204,154,0.13)',
+    client:'Частный дом · Самара',title:'Навес из профнастила над крыльцом 3×3.5 м',
+    desc:'Компактный навес над входной группой из профнастила МП-20. Вписан в архитектуру дома.',
+    metrics:[{v:'3×3.5 м',l:'Размер'},{v:'6 ч',l:'Монтаж'},{v:'10 лет',l:'Гарантия'}],
+    problem:'Входная группа дома не защищена от дождя. Клиент хотел решение, которое визуально вписывается в стиль дома.',
+    solution:'Замерили и изготовили навес точно по размеру крыльца. Профнастил МП-20 в цвет кровли основного дома.',
+    results:['Смонтировано за половину рабочего дня','Цвет профнастила точно совпал с кровлей дома','Конструкция не требует обслуживания 5+ лет'],
+    tags:['Профнастил','МП-20','3×3.5 м'],
+    images:[
+      'https://ads.msk.ru/craft/img/portfolio/canopies/canopy-bench.webp',
+      'https://ads.msk.ru/craft/img/portfolio/canopies/canopy-main.webp',
+    ],
+  },
+  {
+    cat:'Гаражи',accentColor:'rgb(201,134,10)',accentBg:'rgba(201,134,10,0.13)',
+    client:'Гаражный кооператив · Ростов-на-Дону',title:'Утеплённый гараж 4×6 м с секционными воротами',
+    desc:'Металлический утеплённый гараж с минватой 100 мм. Секционные ворота с электроприводом.',
+    metrics:[{v:'4×6 м',l:'Размер'},{v:'1 день',l:'Монтаж'},{v:'15 лет',l:'Служба'}],
+    problem:'Клиент хранил автомобиль зимой — нужна теплоизоляция. Бюджет ограничен по сравнению с кирпичным строением.',
+    solution:'Сборный гараж из сэндвич-панелей с минватой 100 мм. Секционные ворота обеспечивают удобный въезд без потери пространства.',
+    results:['Температура в гараже при -20°C держится на уровне +5°C','Сэкономлено 65% бюджета по сравнению с кирпичным гаражом','Монтаж завершён за 1 рабочий день'],
+    tags:['Утеплённый','4×6 м','Сэндвич-панели','Секционные ворота'],
+    images:[
+      'https://ads.msk.ru/craft/img/portfolio/garages/garage-winter.webp',
+      'https://ads.msk.ru/craft/img/portfolio/garages/202604151040.webp',
+      'https://ads.msk.ru/craft/img/portfolio/garages/7.webp',
+      'https://ads.msk.ru/craft/img/portfolio/garages/8.webp',
+    ],
+  },
+  {
+    cat:'Гаражи',accentColor:'rgb(201,134,10)',accentBg:'rgba(201,134,10,0.13)',
+    client:'ГСК «Автолюбитель» · Воронеж',title:'Стандартный гараж 3×6 м с распашными воротами',
+    desc:'Классический металлический гараж под замену старого. Замер, изготовление и монтаж за 5 дней.',
+    metrics:[{v:'3×6 м',l:'Размер'},{v:'5 дней',l:'Срок'},{v:'10 лет',l:'Гарантия'}],
+    problem:'Старый гараж пришёл в негодность. Нужна замена в рамках существующего места в кооперативе.',
+    solution:'Изготовили гараж точно по размерам места в ГСК. Распашные ворота с надёжным замковым механизмом.',
+    results:['Старая конструкция демонтирована и вывезена нашей командой','Новый гараж установлен точно в размер отведённого места','Документация для кооператива предоставлена'],
+    tags:['Стандарт','3×6 м','Распашные ворота'],
+    images:[
+      'https://ads.msk.ru/craft/img/portfolio/garages/11.webp',
+      'https://ads.msk.ru/craft/img/portfolio/garages/13.webp',
+      'https://ads.msk.ru/craft/img/portfolio/garages/7.webp',
+    ],
+  },
+  {
+    cat:'Ворота',accentColor:'rgb(34,158,217)',accentBg:'rgba(34,158,217,0.13)',
+    client:'Коттеджный посёлок · Волгоград',title:'Откатные ворота 4×2.1 м с автоматикой FAAC',
+    desc:'Откатные ворота с приводом FAAC 740 и фотоэлементами. Управление с пульта и смартфона.',
+    metrics:[{v:'4×2.1 м',l:'Размер'},{v:'FAAC 740',l:'Привод'},{v:'5 лет',l:'Гарантия'}],
+    problem:'Въезд в коттеджный участок требовал автоматизации. Ширина проёма нестандартная — 4 метра.',
+    solution:'Изготовили ворота на сварной раме с заполнением профтрубой. Привод FAAC 740 с системой аварийного открытия вручную.',
+    results:['Ворота открываются за 12 секунд полного цикла','Интеграция с домофоном и видеонаблюдением выполнена','Клиент управляет с телефона через фирменное приложение FAAC'],
+    tags:['Откатные','4×2.1 м','FAAC 740','Смартфон'],
+    images:[
+      'https://ads.msk.ru/craft/img/portfolio/gates/gates-grey-lamels.webp',
+      'https://ads.msk.ru/craft/img/portfolio/gates/gates-frame-brick.webp',
+      'https://ads.msk.ru/craft/img/portfolio/gates/gates-installation-process.webp',
+      'https://ads.msk.ru/craft/img/portfolio/gates/9.webp',
+    ],
+  },
+  {
+    cat:'Ворота',accentColor:'rgb(34,158,217)',accentBg:'rgba(34,158,217,0.13)',
+    client:'Таунхаус · Казань',title:'Секционные ворота Premium 5×2.5 м с автоматикой',
+    desc:'Секционные ворота Hormann с тепловым контуром. Привод Hormann ProMatic с тихим ходом.',
+    metrics:[{v:'5×2.5 м',l:'Размер'},{v:'Hormann',l:'Бренд'},{v:'10 лет',l:'Гарантия'}],
+    problem:'Ворота в таунхаус требовали бесшумной работы — стены смежные с соседями. Нужен премиум-класс.',
+    solution:'Секционные ворота Hormann с сэндвич-панелями 40 мм и тепловым контуром. Привод ProMatic — уровень шума 55 дБ.',
+    results:['Шум при открытии ворот не слышен в соседних секциях','Тепловой контур сохраняет тепло при -30°C','Встроенная Wi-Fi-модуль для управления с телефона'],
+    tags:['Секционные','5×2.5 м','Hormann','ProMatic','Premium'],
+    images:[
+      'https://ads.msk.ru/craft/img/portfolio/gates/canopy-bench.webp',
+      'https://ads.msk.ru/craft/img/portfolio/gates/9.webp',
+      'https://ads.msk.ru/craft/img/portfolio/gates/gates-grey-lamels.webp',
+    ],
+  },
+];
+
+/* ── PORTFOLIO STATE ─────────────────────────────────────── */
+let SC_activeFilter = 'all';
+let SC_currentIdx   = 0;
+let SC_galIdx       = 0;
+let SC_swipeStartX  = 0;
+let SC_swipeStartY  = 0;
+let SC_touchActive  = false;
+
+/* ── FILTERS CONFIG ──────────────────────────────────────── */
+const SC_FILTERS = [
+  { key: 'all',    label: 'Все проекты' },
+  { key: 'Навесы', label: 'Навесы'      },
+  { key: 'Гаражи', label: 'Гаражи'      },
+  { key: 'Ворота', label: 'Ворота'       },
+];
+
+/* ── RENDER FILTERS ──────────────────────────────────────── */
+function SC_renderFilters() {
+  const wrap = document.getElementById('pf-filters');
+  if (!wrap) return;
+  wrap.innerHTML = SC_FILTERS.map(f => `
+    <button
+      style="padding:8px 18px;border-radius:99px;border:1.5px solid ${SC_activeFilter===f.key?'var(--accent)':'var(--border)'};background:${SC_activeFilter===f.key?'var(--accent)':'var(--surface)'};color:${SC_activeFilter===f.key?'#fff':'var(--muted)'};font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--fb)"
+      onclick="SC_setFilter('${f.key}')">
+      ${f.label}
+    </button>`).join('');
+}
+
+function SC_setFilter(key) {
+  SC_activeFilter = key;
+  SC_renderFilters();
+  SC_renderGrid();
+}
+
+/* ── RENDER GRID ─────────────────────────────────────────── */
+function SC_renderGrid() {
+  const grid = document.getElementById('pf-grid');
+  if (!grid) return;
+
+  const list = SC_activeFilter === 'all'
+    ? SC_CASES
+    : SC_CASES.filter(c => c.cat === SC_activeFilter);
+
+  if (!list.length) {
+    grid.innerHTML = `<p style="color:var(--muted);font-size:.85rem;padding:48px 0;text-align:center;grid-column:1/-1">Проектов в этой категории пока нет</p>`;
+    return;
+  }
+
+  grid.innerHTML = list.map(c => {
+    const idx = SC_CASES.indexOf(c);
+    const mBg = c.accentBg.replace('0.13','0.07');
+    const thumb = (c.images && c.images.length)
+      ? `<div style="width:100%;height:200px;overflow:hidden">
+           <img src="${SC_esc(c.images[0])}" alt="${SC_esc(c.title)}"
+                style="width:100%;height:100%;object-fit:cover;display:block"
+                loading="lazy"
+                onerror="this.parentNode.style.display='none'">
+         </div>`
+      : '';
+
+    return `
+    <article class="sc-pcard" role="button" tabindex="0"
+      aria-label="Открыть кейс: ${SC_esc(c.title)}"
+      onclick="SC_openModal(${idx})"
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();SC_openModal(${idx})}">
+      ${thumb}
+      <div class="sc-pcard-stripe" style="background:linear-gradient(90deg,transparent,${c.accentColor},transparent)"></div>
+      <div class="sc-pcard-body">
+        <div class="sc-pcard-top">
+          <span class="sc-pcard-cat" style="background:${c.accentBg};color:${c.accentColor}">${SC_esc(c.cat)}</span>
+          <span class="sc-pcard-client">${SC_esc(c.client)}</span>
+        </div>
+        <h3 class="sc-pcard-title">${SC_esc(c.title)}</h3>
+        <p  class="sc-pcard-desc">${SC_esc(c.desc)}</p>
+        <div class="sc-pcard-metrics">
+          ${c.metrics.map(m=>`
+            <div class="sc-metric" style="background:${mBg}">
+              <div class="sc-metric-val" style="color:${c.accentColor}">${SC_esc(m.v)}</div>
+              <div class="sc-metric-lbl">${SC_esc(m.l)}</div>
+            </div>`).join('')}
+        </div>
+        <div class="sc-pcard-tags">
+          ${c.tags.map(t=>`<span class="sc-pcard-tag">${SC_esc(t)}</span>`).join('')}
+        </div>
+        <div class="sc-pcard-cta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Смотреть кейс
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+/* ── OPEN MODAL ──────────────────────────────────────────── */
+function SC_openModal(idx) {
+  SC_currentIdx = idx;
+  SC_galIdx     = 0;
+
+  const ovl = document.getElementById('case-modal-ovl');
+  if (!ovl) { console.error('[SC] #case-modal-ovl не найден'); return; }
+
+  SC_renderModalContent();
+
+  ovl.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => ovl.classList.add('sc-visible'));
+  });
+}
+
+/* ── CLOSE MODAL ─────────────────────────────────────────── */
+function SC_closeModal() {
+  const ovl = document.getElementById('case-modal-ovl');
+  if (!ovl) return;
+  ovl.classList.remove('sc-visible');
+  setTimeout(() => {
+    ovl.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 240);
+}
+
+/* ── RENDER MODAL CONTENT ────────────────────────────────── */
+function SC_renderModalContent() {
+  const c    = SC_CASES[SC_currentIdx];
+  const imgs = Array.isArray(c.images) ? c.images : [];
+
+  /* — Галерея — */
+  const track = document.getElementById('case-gallery-track');
+  const dots  = document.getElementById('case-gal-dots');
+  const ctr   = document.getElementById('case-gal-counter');
+  const btnP  = document.getElementById('sc-prev');
+  const btnN  = document.getElementById('sc-next');
+
+  if (!track) { console.error('[SC] #case-gallery-track не найден'); return; }
+
+  track.innerHTML = imgs.length
+    ? imgs.map(src=>`
+        <div class="sc-slide">
+          <img src="${SC_esc(src)}" alt="${SC_esc(c.title)}" loading="lazy"
+               onerror="this.parentNode.innerHTML=window.SC_placeholderHTML()"/>
+        </div>`).join('')
+    : `<div class="sc-slide">
+         <div class="sc-slide-placeholder">
+           ${SC_svgPhoto()}
+           <span>Фото этого объекта скоро появятся</span>
+         </div>
+       </div>`;
+
+  track.style.transform = 'translateX(0)';
+
+  const hasMulti = imgs.length > 1;
+  if (btnP) { btnP.style.display = hasMulti?'flex':'none'; btnP.disabled = true; }
+  if (btnN) { btnN.style.display = hasMulti?'flex':'none'; btnN.disabled = !hasMulti; }
+  if (ctr)  { ctr.style.display  = hasMulti?'block':'none'; ctr.textContent=`1 / ${imgs.length}`; }
+  if (dots) {
+    dots.innerHTML = hasMulti
+      ? imgs.map((_,i)=>`<button class="sc-dot ${i===0?'active':''}" onclick="SC_galGoTo(${i})" aria-label="Слайд ${i+1}"></button>`).join('')
+      : '';
+  }
+
+  /* — Контент — */
+  const col = document.getElementById('case-content-col');
+  if (!col) { console.error('[SC] #case-content-col не найден'); return; }
+
+  const mBg = c.accentBg.replace('0.13','0.07');
+
+  col.innerHTML = `
+    <div class="cc-header-row">
+      <span class="cc-badge" style="background:${c.accentBg};color:${c.accentColor}">${SC_esc(c.cat)}</span>
+      <span class="cc-client">${SC_esc(c.client)}</span>
+    </div>
+    <h2 class="cc-title">${SC_esc(c.title)}</h2>
+    <div class="cc-metrics">
+      ${c.metrics.map(m=>`
+        <div class="cc-metric" style="background:${mBg}">
+          <div class="cc-metric-val" style="color:${c.accentColor}">${SC_esc(m.v)}</div>
+          <div class="cc-metric-lbl">${SC_esc(m.l)}</div>
+        </div>`).join('')}
+    </div>
+    <div class="cc-section">
+      <div class="cc-section-lbl">📌 Задача клиента</div>
+      <p class="cc-section-text">${SC_esc(c.problem)}</p>
+    </div>
+    <div class="cc-section">
+      <div class="cc-section-lbl">⚙️ Наше решение</div>
+      <p class="cc-section-text">${SC_esc(c.solution)}</p>
+    </div>
+    <div class="cc-section">
+      <div class="cc-section-lbl">📈 Результат</div>
+      <ul class="cc-results">
+        ${c.results.map(r=>`<li>${SC_esc(r)}</li>`).join('')}
+      </ul>
+    </div>
+    <div class="cc-tags">${c.tags.map(t=>`<span class="cc-tag">${SC_esc(t)}</span>`).join('')}</div>
+    <div class="cc-cta-box">
+      <div class="cc-cta-text">
+        <strong>Хотите такой же объект?</strong>
+        Бесплатный замер — в день обращения.
+      </div>
+      <button class="cc-cta-btn" style="background:${c.accentColor};color:#fff"
+              onclick="SC_closeModal();setTimeout(openModal,260)">
+        Заказать замер
+      </button>
+    </div>`;
+
+  col.scrollTop = 0;
+}
+
+/* ── GALLERY NAV ─────────────────────────────────────────── */
+function SC_galStep(d) {
+  const imgs = SC_CASES[SC_currentIdx]?.images || [];
+  if (imgs.length < 2) return;
+  SC_galIdx = Math.max(0, Math.min(imgs.length-1, SC_galIdx+d));
+  SC_galUpdate(imgs.length);
+}
+function SC_galGoTo(i) {
+  const len = (SC_CASES[SC_currentIdx]?.images||[]).length;
+  SC_galIdx = Math.max(0, Math.min(len-1, i));
+  SC_galUpdate(len);
+}
+function SC_galUpdate(total) {
+  const track = document.getElementById('case-gallery-track');
+  if (track) track.style.transform = `translateX(-${SC_galIdx*100}%)`;
+  const ctr = document.getElementById('case-gal-counter');
+  if (ctr)   ctr.textContent = `${SC_galIdx+1} / ${total}`;
+  const p = document.getElementById('sc-prev');
+  const n = document.getElementById('sc-next');
+  if (p) p.disabled = SC_galIdx === 0;
+  if (n) n.disabled = SC_galIdx === total-1;
+  document.querySelectorAll('.sc-dot').forEach((d,i)=>d.classList.toggle('active',i===SC_galIdx));
+}
+
+/* ── SWIPE ───────────────────────────────────────────────── */
+function SC_initSwipe() {
+  const vp = document.getElementById('case-gallery-viewport');
+  if (!vp) return;
+  vp.addEventListener('touchstart', e=>{
+    SC_swipeStartX=e.touches[0].clientX; SC_swipeStartY=e.touches[0].clientY; SC_touchActive=true;
+  },{passive:true});
+  vp.addEventListener('touchmove', e=>{
+    if(!SC_touchActive) return;
+    const dx=Math.abs(e.touches[0].clientX-SC_swipeStartX), dy=Math.abs(e.touches[0].clientY-SC_swipeStartY);
+    if(dx>dy&&dx>8) e.preventDefault();
+  },{passive:false});
+  vp.addEventListener('touchend', e=>{
+    if(!SC_touchActive) return; SC_touchActive=false;
+    const dx=e.changedTouches[0].clientX-SC_swipeStartX;
+    if(Math.abs(dx)>44) SC_galStep(dx<0?1:-1);
+  },{passive:true});
+}
+
+/* ── HELPERS ─────────────────────────────────────────────── */
+function SC_esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function SC_svgPhoto() {
+  return `<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
+}
+window.SC_placeholderHTML = ()=>`<div class="sc-slide-placeholder">${SC_svgPhoto()}<span>Фото недоступно</span></div>`;
+
+/* ── ЕДИНЫЙ KEYBOARD HANDLER ─────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (document.getElementById('mob-nav-panel')?.classList.contains('open')) closeMobileNav();
+    if (document.getElementById('lead-modal')?.classList.contains('open')) closeModal();
+    const ovl = document.getElementById('case-modal-ovl');
+    if (ovl && ovl.style.display !== 'none') SC_closeModal();
+  }
+  const ovl = document.getElementById('case-modal-ovl');
+  if (ovl && ovl.style.display !== 'none') {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); SC_galStep(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); SC_galStep(1);  }
+  }
+});
+
+/* ── INIT ────────────────────────────────────────────────── */
+function SC_init() {
+  initTicker();
+  initHeader();
+  initAnimations();
+  initCounters();
+  initPhoneFormat();
+  initSmoothScroll();
+  renderCalcForm();
+  updateCalcResult();
+  SC_renderFilters();
+  SC_renderGrid();
+  SC_initSwipe();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', SC_init);
+} else {
+  SC_init();
+}
+</script>
+
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host +
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' +
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script>
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host +
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' +
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script>
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host +
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' +
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script>
+
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host +
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' +
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script>
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host +
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' +
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script></body>
+</html>

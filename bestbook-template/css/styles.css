@@ -1,0 +1,125 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    background-color: #f5f5f9 !important;
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 1170px; /* Максимальная ширина контейнера */
+    width: 100%; /* Ширина контейнера адаптивная */
+    margin: auto; /* Центрирование контейнера */
+    background: #fff;
+    border-radius: 15px;
+}
+
+/* Заголовки */
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 0px;
+    color: #313131; /* Акцентный цвет */
+    text-align: center; /* По центру */
+}
+
+.section-title {
+    font-size: 1.8em;
+    margin-top: 10px; /* Установите нужный отступ */
+    margin-bottom: 5px; /* Уменьшено для более близкого расстояния к описанию */
+    color: #000; /* Темно-синий */
+    padding-bottom: 5px;
+}
+
+.step-title {
+    font-size: 1.5em;
+    margin-top: 15px; /* Уменьшено для более близкого расстояния к описанию */
+    margin-bottom: 5px; /* Уменьшено для более близкого расстояния к описанию */
+    color: #343a40; /* Темный цвет текста */
+    font-weight: bold; /* Сделать жирным */
+    padding: 5px 10px;
+}
+
+.service-title {
+    font-size: 1.4em; /* Чуть меньше, чем step-title */
+    margin-top: 5px;
+    margin-bottom: 3px; /* Уменьшено */
+    color: #333370; /* Синий цвет */
+}
+
+.contact-title {
+    font-size: 1.3em; /* Еще меньше, чем service-title */
+    margin-top: 5px;
+    margin-bottom: 3px;
+    color: #3434e6; /* Зеленый цвет */
+}
+
+/* Параграфы */
+.intro, .description, .call-to-action {
+    margin-bottom: 10px; /* Уменьшено для более близкого расстояния между элементами */
+    font-size: 1.1em;
+    color: var(--bs-body-color);
+    padding-left: 2rem;
+}
+
+/* Списки */
+.step-list, .service-list, .info-list, .contact-methods {
+    list-style-type: none;
+    /*! padding-left: 22px; */
+    padding-left: 2rem;
+}
+
+.step-item, .service-item, .info-item, .contact-item {
+    margin: 0px 0;
+    border-radius: 4px;
+    padding: 0px 10px;
+    background: #f5f5f908; /* Цвет фона для каждого шага */
+}
+
+.step-item h3 {
+    color: #424242; /* Цвет заголовка шага */
+}
+
+.step-item .description {
+    font-size: 1em;
+    color: #555; /* Цвет текста описания */
+}
+
+/* Разделитель между шагами */
+.step-divider {
+    border: 1px solid #e0e0e000; /* Цвет разделителя */
+    margin: 10px 0; /* Отступы вокруг разделителя */
+}
+
+/* Стили для кнопок и акцентов */
+.call-to-action {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background: #333370;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block; /* Для корректного отображения */
+}
+
+.call-to-action:hover {
+    background: #2f2f2f;
+}
+
+/* Общие отступы для всех секций */
+h1, h2, h3, p {
+    margin: 0px 0; /* Отступы для заголовков и параграфов */
+}
+
+/* Дополнительные стили для выделения текста */
+.orange-text {
+    color: #ff5722; /* Оранжевый цвет для выделения */
+}
