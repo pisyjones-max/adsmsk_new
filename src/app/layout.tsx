@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Golos_Text, Inter } from 'next/font/google'
 import '@/styles/globals.css'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 
@@ -159,7 +161,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased" style={{ backgroundColor: 'var(--bg-page)', color: 'var(--text-primary)' }}>
-        {children}
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   )
