@@ -135,7 +135,7 @@ export default function RootLayout({
               '@type':    'MarketingAgency',
               name:       'AdsMsk',
               url:        'https://ads.msk.ru',
-              logo:       'https://ads.msk.ru/img/AdsMsk.jpg',
+              logo:       'https://ads.msk.ru/ads-msk.jpg',
               description:
                 'Агентство digital-маркетинга: контекстная реклама, SEO, SMM, создание сайтов, маркетплейсы.',
               address: {

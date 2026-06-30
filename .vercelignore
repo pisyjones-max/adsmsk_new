@@ -1,0 +1,11 @@
+# Тяжёлые директории — не нужны для Next.js деплоя, использовать CDN
+img/
+bestbook-template/
+static/
+
+# Архивные/служебные файлы
+AUDIT.md
+docs/
+
+# macOS
+.DS_Store
