@@ -2,6 +2,7 @@ import Section from '@/components/ui/Section'
 import Container from '@/components/ui/Container'
 import { CaseCard } from '@/components/ui/Card'
 import { Heading } from '@/components/ui/index'
+import Button from '@/components/ui/Button'
 import { cases } from '@/lib/services-data'
 
 export default function Cases() {
@@ -25,6 +26,12 @@ export default function Cases() {
               href={c.href}
             />
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button href="/keys" variant="secondary" size="lg">
+            Все кейсы
+          </Button>
         </div>
       </Container>
     </Section>

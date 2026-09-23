@@ -15,42 +15,42 @@ export const services: ServiceItem[] = [
     title: 'Сопровождение на маркетплейсах',
     description:
       'Полное сопровождение и управление аккаунтами на Wildberries, Ozon и Яндекс Маркет — от вывода товаров до ежедневного контроля показателей.',
-    href: '/services/marketplace',
+    href: '/uslugi/soprovozhdenie-na-marketplecah',
   },
   {
     icon: '🔍',
     title: 'SEO-оптимизация карточек',
     description:
       'Создаём качественный контент — тексты, фото, видео и 3D-модели — и продвигаем карточки товаров на верхние позиции поисковой выдачи маркетплейса.',
-    href: '/services/seo',
+    href: '/uslugi/seo-optimizaciya-kartochek',
   },
   {
     icon: '🌐',
     title: 'Создание сайтов',
     description:
       'Лендинги, интернет-магазины и витрины на Next.js — быстрая загрузка, адаптивная вёрстка и SEO-разметка прямо из коробки.',
-    href: '/services/web',
+    href: '/uslugi/sozdanie-sajtov',
   },
   {
     icon: '🎯',
     title: 'Контекстная реклама',
     description:
       'Запускаем и ведём рекламные кампании внутри площадок и за их пределами — контроль расходов и рост дохода под контролем.',
-    href: '/services/marketing',
+    href: '/uslugi/marketing',
   },
   {
     icon: '📊',
     title: 'Аналитика',
     description:
       'Выявляем тренды, изучаем поведение покупателей и оптимизируем стратегии на основе регулярного мониторинга данных.',
-    href: '/services/analytics',
+    href: '/uslugi/analitika-marketplejsov',
   },
   {
     icon: '📦',
     title: 'Парсинг данных',
     description:
       'Извлекаем данные с веб-сайтов и маркетплейсов для мониторинга цен, анализа конкурентов и автоматизации бизнес-процессов.',
-    href: '/services/parsing',
+    href: '/uslugi/parsing-dannyh',
   },
 ]
 
@@ -80,27 +80,27 @@ export interface CaseItem {
 
 export const cases: CaseItem[] = [
   {
-    image: '/img/Novation_title.png',
+    image: '/img/Novation_title.webp',
     title: 'Novation: выход на маркетплейс Озон',
     description:
       'Производитель мебели и товаров для дома из фанеры вышел на Ozon с нуля — от концепции до запуска продаж.',
     result: 'Полный запуск продаж на Ozon с нуля',
-    href: '/novation_keys.html',
+    href: '/keys/novation',
   },
   {
-    image: '/img/fotoepilyator1.png',
+    image: '/img/fotoepilyator1.webp',
     title: 'Дистрибьютор фотоэпиляторов',
     description:
       'Дистрибьютор товаров для красоты вышел на Ozon, чтобы увеличить продажи и повысить узнаваемость бренда.',
     result: 'Рост узнаваемости бренда и продаж на Ozon',
-    href: '/photo_keys.html',
+    href: '/keys/fotoepilyator',
   },
   {
-    image: '/img/Ceramagzhel.png',
+    image: '/img/Ceramagzhel.webp',
     title: 'CeramaGzhel: керамика на маркетплейсах',
     description:
       'Бренд гжельской керамики получил карточки товаров с SEO-оптимизацией и стратегию присутствия на маркетплейсах.',
     result: 'Оптимизированные карточки и рост видимости в поиске',
-    href: '/services/marketplace',
+    href: '/uslugi/soprovozhdenie-na-marketplecah',
   },
 ]

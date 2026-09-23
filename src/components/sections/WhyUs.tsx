@@ -10,10 +10,10 @@ const reasons: [string, string, string][] = [
 ]
 
 const usefulLinks: { title: string; href: string }[] = [
-  { title: 'SEO-оптимизация карточек товара для маркетплейсов', href: '/services/seo' },
-  { title: 'Парсинг данных с веб-сайтов и маркетплейсов', href: '/services/parsing' },
-  { title: 'Юнит-экономика для маркетплейсов', href: '/services/analytics' },
-  { title: 'Аналитика данных маркетплейсов', href: '/services/analytics' },
+  { title: 'SEO-оптимизация карточек товара для маркетплейсов', href: '/uslugi/seo-optimizaciya-kartochek' },
+  { title: 'Парсинг данных с веб-сайтов и маркетплейсов', href: '/uslugi/parsing-dannyh' },
+  { title: 'Юнит-экономика для маркетплейсов', href: '/uslugi/unit-ekonomika' },
+  { title: 'Аналитика данных маркетплейсов', href: '/uslugi/analitika-marketplejsov' },
 ]
 
 export default function WhyUs() {

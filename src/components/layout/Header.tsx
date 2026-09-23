@@ -13,8 +13,8 @@ import MobileMenu, { type NavItem } from './MobileMenu'
 const NAV_ITEMS: NavItem[] = [
   { label: 'Главная',  href: '/' },
   { label: 'Услуги',   href: '/uslugi' },
-  { label: 'Кейсы',    href: '/#cases' },
-  { label: 'Команда',  href: '/#team' },
+  { label: 'Кейсы',    href: '/keys' },
+  { label: 'Команда',  href: '/komanda' },
   { label: 'Контакты', href: '/contact' },
 ]
 
