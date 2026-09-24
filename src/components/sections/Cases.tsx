@@ -11,7 +11,7 @@ export default function Cases() {
       <Container>
         <div className="text-center mb-14">
           <div className="section-label justify-center mb-4">Наши проекты</div>
-          <Heading level={2}>Кейсы выхода на маркетплейсы</Heading>
+          <Heading level={2}>Наши кейсы</Heading>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

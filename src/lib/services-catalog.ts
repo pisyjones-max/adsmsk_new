@@ -2,6 +2,8 @@
 // Контент адаптирован из исходных HTML-страниц (static/*.html) под единый
 // шаблон услуги: Hero → Описание → Что входит → Процесс → Результаты → FAQ → CTA.
 
+import { newServices } from './services-new'
+
 export interface ProcessStep {
   title: string
   description: string
@@ -17,8 +19,41 @@ export interface FaqItem {
   answer: string
 }
 
+export type ServiceGroup = 'web' | 'promo' | 'auto' | 'market'
+
+export interface ServiceGroupInfo {
+  id: ServiceGroup
+  title: string
+  description: string
+}
+
+/** Порядок и подписи групп на странице /uslugi. Основное направление — 'web'. */
+export const serviceGroups: ServiceGroupInfo[] = [
+  { id: 'web',    title: 'Сайты и интернет-магазины', description: 'Основное направление: разработка, доработка и сопровождение сайтов для бизнеса.' },
+  { id: 'promo',  title: 'Продвижение и реклама',      description: 'Приводим на сайт клиентов: SEO, Яндекс Директ, сообщества.' },
+  { id: 'auto',   title: 'Боты и автоматизация',       description: 'Telegram-боты, интеграции с CRM и обработка данных.' },
+  { id: 'market', title: 'Маркетплейсы и 3D-контент',  description: 'Выход и сопровождение на Ozon, Wildberries и Яндекс Маркете, визуальный контент.' },
+]
+
+const GROUP_BY_SLUG: Record<string, ServiceGroup> = {
+  'sozdanie-sajtov': 'web',
+  'sozdanie-internet-magazinov': 'web',
+  'razrabotka-korporativnyh-sajtov': 'web',
+  'sozdanie-lendingov': 'web',
+  'redizajn-i-dorabotka-sajtov': 'web',
+  'podderzhka-sajtov': 'web',
+  'seo-prodvizhenie-sajtov': 'promo',
+  'nastrojka-yandeks-direkta': 'promo',
+  'prodvizenie-vkontakte': 'promo',
+  'razrabotka-telegram-botov': 'auto',
+  'avtomatizaciya-biznesa-i-crm': 'auto',
+  'parsing-dannyh': 'auto',
+}
+
 export interface ServiceDetail {
   slug: string
+  /** Группа на странице каталога услуг */
+  group: ServiceGroup
   icon: string
   /** Короткий лейбл над заголовком (хлебная крошка/категория) */
   label: string
@@ -38,7 +73,7 @@ export interface ServiceDetail {
   relatedSlugs: string[]
 }
 
-export const servicesCatalog: ServiceDetail[] = [
+const legacyServices: Omit<ServiceDetail, 'group'>[] = [
   // ── 1. Аналитика маркетплейсов ──────────────────────────────────────────
   {
     slug: 'analitika-marketplejsov',
@@ -47,7 +82,7 @@ export const servicesCatalog: ServiceDetail[] = [
     title: 'Аналитика маркетплейсов',
     shortDescription:
       'Отслеживаем продажи, спрос и поведение покупателей на Ozon, Wildberries и Яндекс Маркет — превращаем данные в решения, которые увеличивают прибыль.',
-    metaTitle: 'Аналитика маркетплейсов — Ozon, Wildberridge, Яндекс Маркет',
+    metaTitle: 'Аналитика маркетплейсов — Ozon, Wildberries, Яндекс Маркет',
     metaDescription:
       'Аналитика продаж и спроса на маркетплейсах: дашборды, отслеживание конкурентов, рекомендации по ассортименту и цене. Закажите аналитику для Ozon, Wildberries, Яндекс Маркет.',
     description: [
@@ -89,10 +124,10 @@ export const servicesCatalog: ServiceDetail[] = [
     slug: 'parsing-dannyh',
     icon: '🕸️',
     label: 'Данные',
-    title: 'Парсинг данных для интернет-магазинов и маркетплейсов',
+    title: 'Парсинг и обработка данных',
     shortDescription:
       'Автоматически собираем цены, остатки и ассортимент конкурентов с маркетплейсов и сайтов — данные, на которых строится точная ценовая и ассортиментная стратегия.',
-    metaTitle: 'Парсинг данных с маркетплейсов и сайтов конкурентов',
+    metaTitle: 'Парсинг и обработка данных: сайты, маркетплейсы, конкуренты',
     metaDescription:
       'Парсинг цен, остатков и ассортимента конкурентов на Ozon, Wildberries и сайтах. Автоматизация мониторинга для интернет-магазинов и маркетплейс-продавцов.',
     description: [
@@ -224,10 +259,10 @@ export const servicesCatalog: ServiceDetail[] = [
     slug: 'sozdanie-kontenta',
     icon: '🎨',
     label: 'Контент',
-    title: 'Создание контента для карточек товара',
+    title: '3D-визуализация и визуальный контент',
     shortDescription:
       'Делаем тексты, фото, инфографику и 3D-визуализации для карточек товаров — контент, который выделяет товар среди конкурентов и повышает конверсию в покупку.',
-    metaTitle: 'Создание контента для карточек товара на маркетплейсах',
+    metaTitle: '3D-визуализация и визуальный контент для бизнеса и маркетплейсов',
     metaDescription:
       'Фото, инфографика, 3D-визуализация и тексты для карточек товара на Ozon, Wildberries, Яндекс Маркет. Контент, который продаёт и выделяет товар среди конкурентов.',
     description: [
@@ -309,60 +344,15 @@ export const servicesCatalog: ServiceDetail[] = [
     relatedSlugs: ['analitika-marketplejsov', 'soprovozhdenie-na-marketplecah', 'parsing-dannyh'],
   },
 
-  // ── 7. Telegram-бот автопостинг ─────────────────────────────────────────
-  {
-    slug: 'telegram-bot-avtoposting',
-    icon: '🤖',
-    label: 'Автоматизация',
-    title: 'Telegram-бот для автопостинга и ведения канала',
-    shortDescription:
-      'Разрабатываем Telegram-бота для автоматического постинга, сбора заявок и взаимодействия с подписчиками — освобождаем время на развитие бизнеса вместо ручного ведения канала.',
-    metaTitle: 'Telegram-бот для автопостинга и ведения канала',
-    metaDescription:
-      'Разработка Telegram-бота для автопостинга, сбора заявок и общения с подписчиками. Автоматизация ведения канала под ключ — от ТЗ до запуска.',
-    description: [
-      'Telegram — отличная платформа для продвижения личного бренда и бизнеса, позволяющая находить клиентов, монетизировать услуги и расширять профессиональные связи. Но регулярное ручное ведение канала отнимает много времени.',
-      'Автопостинг-бот берёт на себя рутину: публикацию контента по расписанию, сбор заявок от подписчиков через формы внутри Telegram, ответы на типовые вопросы и передачу горячих лидов вам напрямую.',
-      'Мы разрабатываем бота под конкретные задачи канала — от простого планировщика публикаций до полноценной воронки с лид-формой, FSM-сценариями диалога и интеграцией с CRM или таблицами.',
-    ],
-    whatIncluded: [
-      'Разработка Telegram-бота на Python (aiogram) под ваши задачи',
-      'Автоматическая публикация постов по расписанию',
-      'Сбор заявок от подписчиков через формы и сценарии диалога',
-      'Передача лидов в чат, CRM или таблицу в реальном времени',
-      'Настройка автоответов на частые вопросы аудитории',
-      'Размещение бота на сервере с гарантией стабильной работы 24/7',
-    ],
-    process: [
-      { title: 'Постановка задач', description: 'Определяем сценарии: автопостинг, сбор заявок, ответы на вопросы или комбинация функций.' },
-      { title: 'Проектирование сценариев', description: 'Прописываем логику диалога с подписчиком и структуру автоматических публикаций.' },
-      { title: 'Разработка бота', description: 'Пишем и тестируем бота на Python, настраиваем интеграции с CRM/таблицами при необходимости.' },
-      { title: 'Тестовый запуск', description: 'Проверяем работу бота на реальном трафике канала, вносим правки.' },
-      { title: 'Запуск и поддержка', description: 'Размещаем бота на сервере, обеспечиваем стабильную работу и при необходимости дорабатываем функции.' },
-    ],
-    results: [
-      { value: '24/7', label: 'автоматическая работа без вашего участия' },
-      { value: 'до 80%', label: 'экономии времени на ведении канала' },
-      { value: '0', label: 'пропущенных заявок от подписчиков' },
-    ],
-    faq: [
-      { question: 'Какие функции может выполнять бот?', answer: 'Автопостинг по расписанию, сбор заявок через формы, ответы на частые вопросы, передача лидов в CRM или менеджеру, рассылки и базовая аналитика по подписчикам.' },
-      { question: 'Сколько времени занимает разработка?', answer: 'Простой бот для автопостинга готов за 3–5 дней. Бот с лид-формой и интеграциями — от 7 до 14 дней в зависимости от сложности сценариев.' },
-      { question: 'Нужно ли платить за хостинг бота отдельно?', answer: 'Да, бот размещается на сервере для постоянной работы — стоимость хостинга минимальна и обсуждается отдельно от разработки.' },
-      { question: 'Можно ли дорабатывать бота после запуска?', answer: 'Да, мы сопровождаем ботов после запуска и добавляем новые функции по мере роста канала или изменения задач.' },
-    ],
-    relatedSlugs: ['prodvizenie-vkontakte', 'sozdanie-sajtov', 'sozdanie-kontenta'],
-  },
-
   // ── 8. Создание сайтов ───────────────────────────────────────────────────
   {
     slug: 'sozdanie-sajtov',
     icon: '🌐',
     label: 'Веб-разработка',
-    title: 'Создание сайтов',
+    title: 'Создание сайтов для бизнеса',
     shortDescription:
       'Разрабатываем быстрые сайты на Next.js — лендинги, интернет-магазины и витрины с адаптивной вёрсткой и SEO-разметкой, готовые привлекать клиентов с первого дня.',
-    metaTitle: 'Создание сайтов на Next.js — лендинги, интернет-магазины',
+    metaTitle: 'Создание сайтов для бизнеса под ключ',
     metaDescription:
       'Разработка сайтов на Next.js: лендинги, интернет-магазины, корпоративные сайты. Быстрая загрузка, адаптивная вёрстка, SEO из коробки. Под ключ — от ТЗ до запуска.',
     description: [
@@ -396,7 +386,7 @@ export const servicesCatalog: ServiceDetail[] = [
       { question: 'Можно ли обойтись минимальными вложениями?', answer: 'Да, можно начать с одностраничного лендинга для проверки гипотезы и масштабировать сайт по мере роста бизнеса.' },
       { question: 'Какие способы оплаты доступны?', answer: 'Безналичный расчёт для юрлиц и ИП, перевод на карту для физлиц. Обычно работаем по схеме предоплата 50% — оплата остатка после сдачи проекта.' },
     ],
-    relatedSlugs: ['sozdanie-kontenta', 'seo-optimizaciya-kartochek', 'telegram-bot-avtoposting'],
+    relatedSlugs: ['sozdanie-internet-magazinov', 'sozdanie-lendingov', 'razrabotka-korporativnyh-sajtov'],
   },
 
   // ── 9. Сопровождение на маркетплейсах ───────────────────────────────────
@@ -486,9 +476,14 @@ export const servicesCatalog: ServiceDetail[] = [
       { question: 'Нужна ли реклама для роста сообщества?', answer: 'Органический контент и активности вроде конкурсов дают рост, но для ускорения масштабирования рекомендуем дополнительно подключать таргетированную рекламу ВКонтакте.' },
       { question: 'Какие способы оплаты доступны?', answer: 'Безналичный расчёт для юрлиц и ИП, перевод на карту для физлиц. Работаем по ежемесячному абонентскому формату.' },
     ],
-    relatedSlugs: ['marketing', 'sozdanie-kontenta', 'telegram-bot-avtoposting'],
+    relatedSlugs: ['marketing', 'sozdanie-kontenta', 'razrabotka-telegram-botov'],
   },
 ]
+
+export const servicesCatalog: ServiceDetail[] = [...newServices, ...legacyServices].map((s) => ({
+  ...s,
+  group: GROUP_BY_SLUG[s.slug] ?? 'market',
+}))
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   return servicesCatalog.find((s) => s.slug === slug)

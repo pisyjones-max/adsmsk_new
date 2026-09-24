@@ -57,7 +57,7 @@ export default function ServicePage({ params }: PageProps) {
     name: service.title,
     description: service.metaDescription,
     provider: {
-      '@type': 'MarketingAgency',
+      '@type': 'ProfessionalService',
       name: 'AdsMsk',
       url: 'https://ads.msk.ru',
     },

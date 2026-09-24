@@ -31,19 +31,21 @@ const nextConfig = {
   // Редиректы со старых Bootstrap-страниц на новые маршруты
   async redirects() {
     return [
-      { source: '/creat-site.html',                         destination: '/services/web',        permanent: true },
-      { source: '/seo-optimization-of-product-cards.html',  destination: '/services/seo',        permanent: true },
-      { source: '/analytics.html',                          destination: '/services/analytics',  permanent: true },
-      { source: '/marketing.html',                          destination: '/services/marketing',  permanent: true },
-      { source: '/autoposting-bot-tg.html',                 destination: '/services/smm',        permanent: true },
-      { source: '/community-promotion-in-vk.html',          destination: '/services/smm',        permanent: true },
-      { source: '/content-creation.html',                   destination: '/services/content',    permanent: true },
-      { source: '/parsing.html',                            destination: '/services/parsing',    permanent: true },
-      { source: '/soprovozhdenie-na-marketplece.html',      destination: '/services/marketplace',permanent: true },
-      { source: '/unit-economy.html',                       destination: '/services/analytics',  permanent: true },
-      { source: '/unit_economics.html',                     destination: '/services/analytics',  permanent: true },
-      { source: '/personal.html',                           destination: '/about',               permanent: true },
-      { source: '/sale.html',                               destination: '/',                    permanent: true },
+      { source: '/creat-site.html',                         destination: '/uslugi/sozdanie-sajtov',                permanent: true },
+      { source: '/seo-optimization-of-product-cards.html',  destination: '/uslugi/seo-optimizaciya-kartochek',     permanent: true },
+      { source: '/analytics.html',                          destination: '/uslugi/analitika-marketplejsov',        permanent: true },
+      { source: '/marketing.html',                          destination: '/uslugi/marketing',                      permanent: true },
+      { source: '/autoposting-bot-tg.html',                 destination: '/uslugi/razrabotka-telegram-botov',      permanent: true },
+      { source: '/community-promotion-in-vk.html',          destination: '/uslugi/prodvizenie-vkontakte',          permanent: true },
+      { source: '/content-creation.html',                   destination: '/uslugi/sozdanie-kontenta',              permanent: true },
+      { source: '/parsing.html',                            destination: '/uslugi/parsing-dannyh',                 permanent: true },
+      { source: '/soprovozhdenie-na-marketplece.html',      destination: '/uslugi/soprovozhdenie-na-marketplecah', permanent: true },
+      { source: '/unit-economy.html',                       destination: '/uslugi/unit-ekonomika',                 permanent: true },
+      { source: '/unit_economics.html',                     destination: '/uslugi/unit-ekonomika',                 permanent: true },
+      { source: '/personal.html',                           destination: '/personal',                              permanent: true },
+      { source: '/sale.html',                               destination: '/',                                      permanent: true },
+      // Страница бота-автопостинга объединена с общей страницей ботов
+      { source: '/uslugi/telegram-bot-avtoposting',         destination: '/uslugi/razrabotka-telegram-botov',      permanent: true },
     ]
   },
 
