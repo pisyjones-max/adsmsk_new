@@ -5,11 +5,12 @@ import Container from '@/components/ui/Container'
 // ─── Data ───────────────────────────────────────────────────────────────────
 
 const SERVICES = [
-  { label: 'Контекстная реклама', href: '/uslugi' },
-  { label: 'SEO-продвижение',     href: '/uslugi' },
-  { label: 'SMM и реклама ВК',    href: '/uslugi' },
-  { label: 'Создание сайтов',     href: '/uslugi' },
-  { label: 'Маркетплейсы',        href: '/uslugi' },
+  { label: 'Создание сайтов',              href: '/uslugi/sozdanie-sajtov' },
+  { label: 'Интернет-магазины',            href: '/uslugi/sozdanie-internet-magazinov' },
+  { label: 'SEO-продвижение сайтов',       href: '/uslugi/seo-prodvizhenie-sajtov' },
+  { label: 'Яндекс Директ',                href: '/uslugi/nastrojka-yandeks-direkta' },
+  { label: 'Telegram-боты',                href: '/uslugi/razrabotka-telegram-botov' },
+  { label: 'Маркетплейсы',                 href: '/uslugi/soprovozhdenie-na-marketplecah' },
 ]
 
 const PHONE        = '+7-915-468-39-25'
@@ -46,8 +47,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-white/60 max-w-xs">
-              Агентство digital-маркетинга в Москве: контекстная реклама, SEO, SMM
-              и создание сайтов с измеримым результатом.
+              Разрабатываем сайты и интернет-магазины для бизнеса. SEO, реклама, Telegram-боты, автоматизация и маркетплейсы.
             </p>
           </div>
 

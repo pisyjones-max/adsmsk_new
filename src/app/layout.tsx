@@ -26,19 +26,20 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ads.msk.ru'),
 
   title: {
-    default:  'AdsMsk — Digital-маркетинг в Москве',
+    default:  'AdsMsk — создание сайтов и интернет-магазинов для бизнеса',
     template: '%s | AdsMsk',
   },
   description:
-    'Агентство digital-маркетинга в Москве. Контекстная реклама, SEO-продвижение, SMM, создание сайтов, маркетплейсы. Результат — измеримый рост трафика и продаж.',
+    'Создание сайтов и интернет-магазинов для бизнеса под ключ. Лендинги, корпоративные сайты, редизайн и поддержка. SEO, Яндекс Директ, Telegram-боты, автоматизация и маркетплейсы.',
   keywords: [
-    'digital-маркетинг Москва',
-    'контекстная реклама Яндекс Директ',
-    'SEO продвижение сайтов',
-    'SMM агентство Москва',
-    'создание сайтов Москва',
-    'реклама ВКонтакте',
-    'продвижение маркетплейс',
+    'создание сайтов',
+    'создание интернет-магазинов',
+    'разработка сайтов для бизнеса',
+    'разработка корпоративных сайтов',
+    'создание лендингов',
+    'SEO-продвижение сайтов',
+    'настройка Яндекс Директа',
+    'разработка Telegram-ботов',
     'AdsMsk',
   ],
   authors:  [{ name: 'AdsMsk', url: 'https://ads.msk.ru' }],
@@ -50,22 +51,22 @@ export const metadata: Metadata = {
     locale:      'ru_RU',
     url:         'https://ads.msk.ru',
     siteName:    'AdsMsk',
-    title:       'AdsMsk — Digital-маркетинг в Москве',
-    description: 'Контекстная реклама, SEO, SMM, создание сайтов. Результат — измеримый рост.',
+    title:       'AdsMsk — создание сайтов и интернет-магазинов для бизнеса',
+    description: 'Сайты, интернет-магазины, лендинги. SEO, Яндекс Директ, Telegram-боты, автоматизация.',
     images: [
       {
         url:    '/og-image.jpg',
         width:  1200,
         height: 630,
-        alt:    'AdsMsk — Digital-маркетинг в Москве',
+        alt:    'AdsMsk — создание сайтов и интернет-магазинов для бизнеса',
       },
     ],
   },
 
   twitter: {
     card:        'summary_large_image',
-    title:       'AdsMsk — Digital-маркетинг в Москве',
-    description: 'Контекстная реклама, SEO, SMM, создание сайтов.',
+    title:       'AdsMsk — создание сайтов и интернет-магазинов для бизнеса',
+    description: 'Сайты, интернет-магазины, лендинги. SEO, Яндекс Директ, Telegram-боты.',
     images:      ['/og-image.jpg'],
   },
 
@@ -134,12 +135,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type':    'MarketingAgency',
+              '@type':    'ProfessionalService',
               name:       'AdsMsk',
               url:        'https://ads.msk.ru',
               logo:       'https://ads.msk.ru/ads-msk.jpg',
               description:
-                'Агентство digital-маркетинга: контекстная реклама, SEO, SMM, создание сайтов, маркетплейсы.',
+                'Разработка сайтов и интернет-магазинов для бизнеса. SEO, Яндекс Директ, Telegram-боты, автоматизация, маркетплейсы.',
               address: {
                 '@type':           'PostalAddress',
                 addressLocality:   'Москва',

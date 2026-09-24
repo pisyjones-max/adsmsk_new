@@ -1,6 +1,7 @@
 // ─── Services data for the homepage ────────────────────────────────────────
-// Источник контента: static/index.html (секции #service, #cases),
-// адаптировано под маркетплейс-позиционирование AdsMsk.
+// Позиционирование: сайты и интернет-магазины — основное направление;
+// SEO, реклама, боты, автоматизация и маркетплейсы — усиливающие.
+// Названия услуг синхронизированы с docs/YANDEX-BUSINESS.md.
 
 export interface ServiceItem {
   icon: string
@@ -9,48 +10,89 @@ export interface ServiceItem {
   href: string
 }
 
-export const services: ServiceItem[] = [
-  {
-    icon: '🛒',
-    title: 'Сопровождение на маркетплейсах',
-    description:
-      'Полное сопровождение и управление аккаунтами на Wildberries, Ozon и Яндекс Маркет — от вывода товаров до ежедневного контроля показателей.',
-    href: '/uslugi/soprovozhdenie-na-marketplecah',
-  },
-  {
-    icon: '🔍',
-    title: 'SEO-оптимизация карточек',
-    description:
-      'Создаём качественный контент — тексты, фото, видео и 3D-модели — и продвигаем карточки товаров на верхние позиции поисковой выдачи маркетплейса.',
-    href: '/uslugi/seo-optimizaciya-kartochek',
-  },
+/** Основное направление: сайты и интернет-магазины */
+export const webServices: ServiceItem[] = [
   {
     icon: '🌐',
-    title: 'Создание сайтов',
+    title: 'Создание сайтов для бизнеса',
     description:
-      'Лендинги, интернет-магазины и витрины на Next.js — быстрая загрузка, адаптивная вёрстка и SEO-разметка прямо из коробки.',
+      'Сайты под ключ: от структуры и дизайна до запуска. Быстрая загрузка, адаптивная вёрстка, SEO-подготовка.',
     href: '/uslugi/sozdanie-sajtov',
   },
   {
-    icon: '🎯',
-    title: 'Контекстная реклама',
+    icon: '🛒',
+    title: 'Создание интернет-магазинов',
     description:
-      'Запускаем и ведём рекламные кампании внутри площадок и за их пределами — контроль расходов и рост дохода под контролем.',
-    href: '/uslugi/marketing',
+      'Каталог, корзина, онлайн-оплата, доставка и интеграция с учётной системой и CRM.',
+    href: '/uslugi/sozdanie-internet-magazinov',
   },
   {
-    icon: '📊',
-    title: 'Аналитика',
+    icon: '🏢',
+    title: 'Разработка корпоративных сайтов',
     description:
-      'Выявляем тренды, изучаем поведение покупателей и оптимизируем стратегии на основе регулярного мониторинга данных.',
-    href: '/uslugi/analitika-marketplejsov',
+      'Сайты компаний и сайты-визитки: услуги, кейсы, отзывы, формы заявок и аналитика.',
+    href: '/uslugi/razrabotka-korporativnyh-sajtov',
+  },
+  {
+    icon: '🎯',
+    title: 'Создание лендингов',
+    description:
+      'Одностраничные сайты под рекламу и запуск продукта. Срок — от 5 рабочих дней.',
+    href: '/uslugi/sozdanie-lendingov',
+  },
+  {
+    icon: '🔧',
+    title: 'Редизайн и доработка сайтов',
+    description:
+      'Обновим дизайн, ускорим загрузку, добавим функции — без потери позиций в поиске.',
+    href: '/uslugi/redizajn-i-dorabotka-sajtov',
+  },
+  {
+    icon: '🛡️',
+    title: 'Поддержка и сопровождение сайтов',
+    description:
+      'Обновления, резервные копии, мониторинг и доработки по абонементу.',
+    href: '/uslugi/podderzhka-sajtov',
+  },
+]
+
+/** Дополнительные направления, которые усиливают сайт */
+export const growthServices: ServiceItem[] = [
+  {
+    icon: '📈',
+    title: 'SEO-продвижение сайтов',
+    description: 'Аудит, семантика и оптимизация — чтобы клиенты находили вас в Яндексе и Google.',
+    href: '/uslugi/seo-prodvizhenie-sajtov',
+  },
+  {
+    icon: '🎯',
+    title: 'Настройка Яндекс Директа',
+    description: 'Контекстная реклама с контролем стоимости заявки и сквозной аналитикой.',
+    href: '/uslugi/nastrojka-yandeks-direkta',
+  },
+  {
+    icon: '🤖',
+    title: 'Разработка Telegram-ботов и чат-ботов',
+    description: 'Приём заявок, каталог, оплата, уведомления и ИИ-ассистент для клиентов.',
+    href: '/uslugi/razrabotka-telegram-botov',
+  },
+  {
+    icon: '⚙️',
+    title: 'Автоматизация бизнеса и интеграция CRM',
+    description: 'Соединяем сайт, CRM и мессенджеры, чтобы заявки не терялись.',
+    href: '/uslugi/avtomatizaciya-biznesa-i-crm',
   },
   {
     icon: '📦',
-    title: 'Парсинг данных',
-    description:
-      'Извлекаем данные с веб-сайтов и маркетплейсов для мониторинга цен, анализа конкурентов и автоматизации бизнес-процессов.',
+    title: 'Парсинг и обработка данных',
+    description: 'Автоматический сбор цен, остатков и ассортимента с сайтов и маркетплейсов.',
     href: '/uslugi/parsing-dannyh',
+  },
+  {
+    icon: '🛍️',
+    title: 'Сопровождение на маркетплейсах',
+    description: 'Ozon, Wildberries, Яндекс Маркет: карточки, реклама, аналитика.',
+    href: '/uslugi/soprovozhdenie-na-marketplecah',
   },
 ]
 
@@ -71,6 +113,7 @@ export const stats: StatItem[] = [
 // ─── Cases ───────────────────────────────────────────────────────────────────
 
 export interface CaseItem {
+  kind: 'site' | 'marketplace'
   image: string
   title: string
   description: string
@@ -80,6 +123,31 @@ export interface CaseItem {
 
 export const cases: CaseItem[] = [
   {
+    kind: 'site',
+    image: '/img/case-studio-dvoretckaya.webp',
+    title: 'Сайт студии творчества в Раменском',
+    description: 'Направления с ценами, галерея, отзывы и запись онлайн.',
+    result: 'Сайт с записью онлайн и SEO-основой под Раменское',
+    href: '/keys/studio-dvoretckaya',
+  },
+  {
+    kind: 'site',
+    image: '/img/case-platforma.webp',
+    title: 'ПЛАТФОРМА: интернет-магазин кровельных материалов',
+    description: 'Каталог, калькулятор материалов, доставка и SEO-блог.',
+    result: 'Магазин с калькулятором, заявки в Telegram',
+    href: '/keys/platforma',
+  },
+  {
+    kind: 'site',
+    image: '/img/case-sk-craft.webp',
+    title: 'Сталь Крафт: сайт навесов, гаражей и ворот',
+    description: 'Страницы по услугам и городам, заявки и аналитика.',
+    result: 'SEO-структура под услуги и города, сквозная аналитика',
+    href: '/keys/sk-craft',
+  },
+  {
+    kind: 'marketplace',
     image: '/img/Novation_title.webp',
     title: 'Novation: выход на маркетплейс Озон',
     description:
@@ -88,6 +156,7 @@ export const cases: CaseItem[] = [
     href: '/keys/novation',
   },
   {
+    kind: 'marketplace',
     image: '/img/fotoepilyator1.webp',
     title: 'Дистрибьютор фотоэпиляторов',
     description:
@@ -96,6 +165,7 @@ export const cases: CaseItem[] = [
     href: '/keys/fotoepilyator',
   },
   {
+    kind: 'marketplace',
     image: '/img/Ceramagzhel.webp',
     title: 'CeramaGzhel: керамика на маркетплейсах',
     description:

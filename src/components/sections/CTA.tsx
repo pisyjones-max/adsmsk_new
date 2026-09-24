@@ -9,14 +9,13 @@ export default function CTA() {
       <Container centered>
         <Badge variant="brand" className="mb-6">Бесплатная консультация</Badge>
         <Heading level={2} gradient className="mb-4 max-w-2xl">
-          Подпишись на наш канал
+          Обсудим ваш сайт или интернет-магазин
         </Heading>
         <p
           className="text-lg mb-10 max-w-prose"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Получайте разборы кейсов, новости маркетплейсов и спецпредложения первыми.
-          Первая консультация — бесплатно, без обязательств.
+          Расскажите о задаче — предложим решение, сроки и ориентир по стоимости. Первая консультация бесплатная и ни к чему не обязывает.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Button size="xl" href="https://t.me/UR16_bot?start" external>
@@ -25,7 +24,7 @@ export default function CTA() {
           <Button
             size="xl"
             variant="secondary"
-            href="https://wa.me/?text=Здравствуйте,%20хочу%20узнать%20о%20сопровождении%20на%20маркетплейсах"
+            href="https://wa.me/?text=Здравствуйте,%20хочу%20обсудить%20разработку%20сайта"
             external
           >
             Написать в WhatsApp

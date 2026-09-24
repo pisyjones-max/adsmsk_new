@@ -6,16 +6,37 @@ import Button from '@/components/ui/Button'
 import { cases } from '@/lib/services-data'
 
 export default function Cases() {
+  const sites = cases.filter((c) => c.kind === 'site')
+  const marketplaces = cases.filter((c) => c.kind === 'marketplace')
+
   return (
     <Section id="cases" background="surface" divider>
       <Container>
         <div className="text-center mb-14">
           <div className="section-label justify-center mb-4">Наши проекты</div>
-          <Heading level={2}>Кейсы выхода на маркетплейсы</Heading>
+          <Heading level={2}>Сайты и интернет-магазины, которые мы сделали</Heading>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cases.map((c) => (
+          {sites.map((c) => (
+            <CaseCard
+              key={c.title}
+              image={c.image}
+              imageAlt={c.title}
+              category="Сайт"
+              title={c.title}
+              result={c.result}
+              href={c.href}
+            />
+          ))}
+        </div>
+
+        <div className="text-center mt-16 mb-10">
+          <Heading level={3}>Дополнительно: выход на маркетплейсы</Heading>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {marketplaces.map((c) => (
             <CaseCard
               key={c.title}
               image={c.image}
