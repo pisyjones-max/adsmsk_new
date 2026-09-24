@@ -113,6 +113,7 @@ export const stats: StatItem[] = [
 // ─── Cases ───────────────────────────────────────────────────────────────────
 
 export interface CaseItem {
+  kind: 'site' | 'marketplace'
   image: string
   title: string
   description: string
@@ -122,6 +123,31 @@ export interface CaseItem {
 
 export const cases: CaseItem[] = [
   {
+    kind: 'site',
+    image: '/img/case-studio-dvoretckaya.webp',
+    title: 'Сайт студии творчества в Раменском',
+    description: 'Направления с ценами, галерея, отзывы и запись онлайн.',
+    result: 'Сайт с записью онлайн и SEO-основой под Раменское',
+    href: '/keys/studio-dvoretckaya',
+  },
+  {
+    kind: 'site',
+    image: '/img/case-platforma.webp',
+    title: 'ПЛАТФОРМА: интернет-магазин кровельных материалов',
+    description: 'Каталог, калькулятор материалов, доставка и SEO-блог.',
+    result: 'Магазин с калькулятором, заявки в Telegram',
+    href: '/keys/platforma',
+  },
+  {
+    kind: 'site',
+    image: '/img/case-sk-craft.webp',
+    title: 'Сталь Крафт: сайт навесов, гаражей и ворот',
+    description: 'Страницы по услугам и городам, заявки и аналитика.',
+    result: 'SEO-структура под услуги и города, сквозная аналитика',
+    href: '/keys/sk-craft',
+  },
+  {
+    kind: 'marketplace',
     image: '/img/Novation_title.webp',
     title: 'Novation: выход на маркетплейс Озон',
     description:
@@ -130,6 +156,7 @@ export const cases: CaseItem[] = [
     href: '/keys/novation',
   },
   {
+    kind: 'marketplace',
     image: '/img/fotoepilyator1.webp',
     title: 'Дистрибьютор фотоэпиляторов',
     description:
@@ -138,6 +165,7 @@ export const cases: CaseItem[] = [
     href: '/keys/fotoepilyator',
   },
   {
+    kind: 'marketplace',
     image: '/img/Ceramagzhel.webp',
     title: 'CeramaGzhel: керамика на маркетплейсах',
     description:

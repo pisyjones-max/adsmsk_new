@@ -3,6 +3,7 @@
 // шаблон услуги: Hero → Описание → Что входит → Процесс → Результаты → FAQ → CTA.
 
 import { newServices } from './services-new'
+import { formatPrice, getPrice } from './service-prices'
 
 export interface ProcessStep {
   title: string
@@ -52,6 +53,8 @@ const GROUP_BY_SLUG: Record<string, ServiceGroup> = {
 
 export interface ServiceDetail {
   slug: string
+  /** Цена «от», например «от 35 000 ₽» (см. service-prices.ts) */
+  price?: string
   /** Группа на странице каталога услуг */
   group: ServiceGroup
   icon: string
@@ -480,10 +483,22 @@ const legacyServices: Omit<ServiceDetail, 'group'>[] = [
   },
 ]
 
-export const servicesCatalog: ServiceDetail[] = [...newServices, ...legacyServices].map((s) => ({
-  ...s,
-  group: GROUP_BY_SLUG[s.slug] ?? 'market',
-}))
+export const servicesCatalog: ServiceDetail[] = [...newServices, ...legacyServices].map((s) => {
+  const price = formatPrice(s.slug)
+  const note = getPrice(s.slug)?.note
+  const priceSentence = price ? `Стоимость — ${price}${note ? ` (${note})` : ''}.` : ''
+  return {
+    ...s,
+    group: GROUP_BY_SLUG[s.slug] ?? 'market',
+    price: price ?? undefined,
+    // В ответ на «Сколько стоит…» добавляем конкретную цену «от»
+    faq: s.faq.map((f) =>
+      priceSentence && /^Сколько стоит/i.test(f.question)
+        ? { ...f, answer: `${priceSentence} ${f.answer}` }
+        : f,
+    ),
+  }
+})
 
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   return servicesCatalog.find((s) => s.slug === slug)

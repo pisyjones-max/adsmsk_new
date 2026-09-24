@@ -13,9 +13,11 @@ interface ServiceHeroProps {
   title: string
   description: string
   breadcrumbs: Crumb[]
+  /** «от 35 000 ₽» */
+  price?: string
 }
 
-export default function ServiceHero({ label, title, description, breadcrumbs }: ServiceHeroProps) {
+export default function ServiceHero({ label, title, description, breadcrumbs, price }: ServiceHeroProps) {
   return (
     <Section as="header" size="lg" background="dark" glow className="min-h-[60vh] flex items-center">
       <Container centered>
@@ -47,6 +49,15 @@ export default function ServiceHero({ label, title, description, breadcrumbs }: 
         >
           {description}
         </p>
+
+        {price && (
+          <p className="mb-8 animate-fade-in animate-delay-300" style={{ color: 'var(--text-primary)' }}>
+            <span className="text-2xl font-semibold">{price}</span>
+            <span className="block text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+              точную стоимость назовём после короткого брифа
+            </span>
+          </p>
+        )}
 
         <div className="flex flex-wrap gap-4 justify-center animate-fade-in animate-delay-300">
           <Button size="lg" href="https://t.me/UR16_bot?start" external>

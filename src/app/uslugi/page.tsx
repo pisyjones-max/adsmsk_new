@@ -59,7 +59,7 @@ export default function ServicesCatalogPage() {
                       icon={<span className="text-xl" aria-hidden="true">{s.icon}</span>}
                       title={s.title}
                       description={s.shortDescription}
-                      cta="Подробнее"
+                      cta={s.price ? `Подробнее · ${s.price}` : 'Подробнее'}
                     />
                   </Link>
                 ))}

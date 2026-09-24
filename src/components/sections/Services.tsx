@@ -3,8 +3,11 @@ import Section from '@/components/ui/Section'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import { ServiceCard } from '@/components/ui/Card'
+import { formatPrice } from '@/lib/service-prices'
 import { Heading } from '@/components/ui/index'
 import { webServices, growthServices, type ServiceItem } from '@/lib/services-data'
+
+const priceLabel = (href: string) => formatPrice(href.split('/').pop() ?? '')
 
 function ServiceGrid({ items }: { items: ServiceItem[] }) {
   return (
@@ -15,7 +18,7 @@ function ServiceGrid({ items }: { items: ServiceItem[] }) {
             icon={<span className="text-xl" aria-hidden="true">{s.icon}</span>}
             title={s.title}
             description={s.description}
-            cta="Подробнее"
+            cta={priceLabel(s.href) ? `Подробнее · ${priceLabel(s.href)}` : 'Подробнее'}
           />
         </Link>
       ))}

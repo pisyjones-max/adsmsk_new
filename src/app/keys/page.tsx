@@ -9,7 +9,7 @@ import { cases } from '@/lib/services-data'
 export const metadata: Metadata = {
   title: 'Кейсы',
   description:
-    'Кейсы AdsMsk: выход на маркетплейсы Ozon и Wildberries, рост продаж и узнаваемости брендов Novation, дистрибьютора фотоэпиляторов и CeramaGzhel.',
+    'Кейсы AdsMsk: сайты студии творчества, интернет-магазина кровельных материалов и компании по металлоконструкциям, а также выход на маркетплейсы Ozon и Wildberries.',
   alternates: { canonical: 'https://ads.msk.ru/keys' },
 }
 
@@ -21,8 +21,7 @@ export default function KeysPage() {
           <div className="section-label justify-center mb-6">Кейсы · AdsMsk</div>
           <h1 className="heading-display text-balance mb-6">Некоторые кейсы компании</h1>
           <p className="text-xl max-w-prose mx-auto" style={{ color: 'var(--text-secondary)' }}>
-            Тут мы собрали кейсы, чтобы продемонстрировать наши возможности, опыт и подход к работе
-            на маркетплейсах.
+            Сайты и интернет-магазины, которые мы разработали, и кейсы выхода на маркетплейсы.
           </p>
         </Container>
       </Section>
@@ -35,7 +34,7 @@ export default function KeysPage() {
                 key={c.title}
                 image={c.image}
                 imageAlt={c.title}
-                category="Маркетплейс"
+                category={c.kind === 'site' ? 'Сайт' : 'Маркетплейс'}
                 title={c.title}
                 result={c.result}
                 href={c.href}

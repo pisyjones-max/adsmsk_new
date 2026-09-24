@@ -9,6 +9,7 @@ import ServiceHero from '@/components/sections/ServiceHero'
 import ServiceProcess from '@/components/sections/ServiceProcess'
 import ServiceFAQ from '@/components/sections/ServiceFAQ'
 import CTA from '@/components/sections/CTA'
+import { getPrice } from '@/lib/service-prices'
 import { servicesCatalog, getServiceBySlug, getRelatedServices } from '@/lib/services-catalog'
 
 interface PageProps {
@@ -50,6 +51,8 @@ export default function ServicePage({ params }: PageProps) {
     { label: service.title },
   ]
 
+  const priceInfo = getPrice(service.slug)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -62,6 +65,17 @@ export default function ServicePage({ params }: PageProps) {
       url: 'https://ads.msk.ru',
     },
     areaServed: 'RU',
+    ...(priceInfo && {
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'RUB',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'RUB',
+          minPrice: priceInfo.from,
+        },
+      },
+    }),
   }
 
   return (
@@ -77,6 +91,7 @@ export default function ServicePage({ params }: PageProps) {
         title={service.title}
         description={service.shortDescription}
         breadcrumbs={breadcrumbs}
+        price={service.price}
       />
 
       {/* 2. Описание услуги */}
