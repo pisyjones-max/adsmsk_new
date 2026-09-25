@@ -16,7 +16,7 @@ const maxWidthMap: Record<ContainerSize, string> = {
   sm:   'max-w-2xl',   // ~672px
   md:   'max-w-4xl',   // ~896px
   lg:   'max-w-5xl',   // ~1024px
-  xl:   'max-w-7xl',   // ~1280px — основной контейнер
+  xl:   'max-w-[1200px]', // основной контейнер
   full: 'max-w-full',
 }
 

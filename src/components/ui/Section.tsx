@@ -21,11 +21,11 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 // ─── Style Maps ──────────────────────────────────────────────────────────────
 
 const sizeMap: Record<SectionSize, string> = {
-  xs: 'py-8  md:py-10',
-  sm: 'py-10 md:py-14',
-  md: 'py-16 md:py-20 lg:py-24',
-  lg: 'py-20 md:py-28 lg:py-32',
-  xl: 'py-24 md:py-32 lg:py-40',
+  xs: 'py-6  md:py-8',
+  sm: 'py-10 md:py-12',
+  md: 'py-14 md:py-20',
+  lg: 'py-16 md:py-24',
+  xl: 'py-20 md:py-28',
 }
 
 const bgMap: Record<SectionBackground, string> = {
@@ -48,9 +48,9 @@ function getBgStyle(background: SectionBackground): React.CSSProperties {
       return { backgroundColor: 'var(--bg-elevated)' }
     case 'brand':
       return {
-        background: 'linear-gradient(135deg, rgba(102,64,255,0.12) 0%, rgba(102,64,255,0.04) 100%)',
-        borderTop: '1px solid rgba(102,64,255,0.15)',
-        borderBottom: '1px solid rgba(102,64,255,0.15)',
+        backgroundColor: 'var(--bg-surface)',
+        borderTop: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--border-default)',
       }
     case 'dark':
       return { backgroundColor: 'var(--color-neutral-950)' }
@@ -78,32 +78,29 @@ export default function Section({
       style={{ ...getBgStyle(background), ...style }}
       {...rest}
     >
-      {/* Верхний декоративный разделитель */}
+      {/* Верхняя линия-разделитель */}
       {divider && (
         <div
           className="absolute top-0 inset-x-0 h-px"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent 0%, var(--border-brand) 30%, var(--border-brand) 70%, transparent 100%)',
-          }}
+          style={{ background: 'var(--border-default)' }}
           aria-hidden="true"
         />
       )}
 
-      {/* Радиальное свечение (glow) */}
+      {/* Сетка + акцентная линия сверху */}
       {glow && (
-        <div
-          className="pointer-events-none absolute -top-32 inset-x-0 h-96 opacity-40"
-          style={{
-            background:
-              'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(102,64,255,0.3) 0%, transparent 100%)',
-          }}
-          aria-hidden="true"
-        />
+        <>
+          <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden="true" />
+          <div
+            className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-px w-40"
+            style={{ background: 'var(--color-brand-500)' }}
+            aria-hidden="true"
+          />
+        </>
       )}
 
-      {/* Основной контент */}
-      <div className="relative z-10">{children}</div>
+      {/* Основной контент (w-full — иначе во flex-секциях контент сжимается и уезжает влево) */}
+      <div className="relative z-10 w-full">{children}</div>
     </Tag>
   )
 }

@@ -1,24 +1,13 @@
 import type { Metadata, Viewport } from 'next'
-import { Golos_Text, Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 
-const golosText = Golos_Text({
-  subsets:  ['latin', 'cyrillic'],
-  weight:   ['400', '500', '600', '700', '800'],
-  variable: '--font-golos',
-  display:  'swap',
-})
+const golosText = { variable: '' }
 
-const inter = Inter({
-  subsets:  ['latin', 'cyrillic'],
-  weight:   ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
-  display:  'swap',
-})
+const inter = { variable: '' }
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 

@@ -11,34 +11,34 @@ const config: Config = {
     extend: {
       // ─── COLOR TOKENS ───────────────────────────────────────────────────
       colors: {
-        // Brand – фирменный фиолетовый
+        // Brand – электрик-лайм на графите
         brand: {
-          50:  '#f0ecff',
-          100: '#e0d9ff',
-          200: '#c4b3ff',
-          300: '#a88dff',
-          400: '#8b66ff',
-          500: '#6640ff', // ← основной акцент
-          600: '#5233cc',
-          700: '#3d2699',
-          800: '#291a66',
-          900: '#140d33',
-          950: '#0a0619',
+          50:  '#FBFFEE',
+          100: '#F6FFDB',
+          200: '#EDFFB8',
+          300: '#E1FF8F',
+          400: '#D4FF5C',
+          500: '#C3F53C', // ← основной акцент
+          600: '#9CCB1A',
+          700: '#6F9310',
+          800: '#43590A',
+          900: '#212D05',
+          950: '#111803',
         },
-        // Neutral – серая палитра для фона, границ, текста
+        // Neutral – графит
         neutral: {
-          0:   '#ffffff',
-          50:  '#f8f8fb',
-          100: '#f0f0f7',
-          200: '#e2e2ed',
-          300: '#c9c9d8',
-          400: '#9999b3',
-          500: '#6e6e8a',
-          600: '#4e4e6a',
-          700: '#33334d',
-          800: '#1e1e30',
-          900: '#0f0f1e',
-          950: '#05071a', // ← текущий фон сайта
+          0:   '#FFFFFF',
+          50:  '#F4F5F6',
+          100: '#E8EAEC',
+          200: '#D0D3D8',
+          300: '#B0B5BD',
+          400: '#8E949E',
+          500: '#7C828C',
+          600: '#4A4F58',
+          700: '#2E3238',
+          800: '#1A1D21',
+          900: '#101215',
+          950: '#08090A', // ← фон сайта
         },
         // Статусы
         success: {
@@ -69,7 +69,7 @@ const config: Config = {
         sans:    ['var(--font-golos)', 'system-ui', 'sans-serif'],
         // Inter — для UI-элементов, цифр, кода
         ui:      ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        mono:    ['JetBrains Mono', 'Fira Code', 'monospace'],
+        mono:    ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
       },
       fontSize: {
         xs:   ['0.75rem',  { lineHeight: '1.5',  letterSpacing: '0.01em' }],
@@ -112,13 +112,13 @@ const config: Config = {
       // ─── BORDERS ─────────────────────────────────────────────────────────
       borderRadius: {
         none:   '0',
-        sm:     '0.25rem',
-        DEFAULT:'0.375rem',
-        md:     '0.5rem',
-        lg:     '0.75rem',
-        xl:     '1rem',
-        '2xl':  '1.25rem',
-        '3xl':  '1.5rem',
+        sm:     '0.125rem',
+        DEFAULT:'0.25rem',
+        md:     '0.375rem',
+        lg:     '0.5rem',
+        xl:     '0.625rem',
+        '2xl':  '0.75rem',
+        '3xl':  '1rem',
         full:   '9999px',
       },
       borderWidth: {
@@ -136,9 +136,9 @@ const config: Config = {
         lg:    '0 10px 15px -3px rgb(0 0 0 / 0.1)',
         xl:    '0 20px 25px -5px rgb(0 0 0 / 0.1)',
         // Фирменные тени с фиолетовым свечением
-        'brand-sm': '0 0 12px 2px rgb(102 64 255 / 0.2)',
-        'brand-md': '0 0 24px 4px rgb(102 64 255 / 0.25)',
-        'brand-lg': '0 0 40px 8px rgb(102 64 255 / 0.2)',
+        'brand-sm': '0 0 0 1px rgb(195 245 60 / 0.35)',
+        'brand-md': '0 0 0 1px rgb(195 245 60 / 0.5)',
+        'brand-lg': '0 0 0 1px rgb(195 245 60 / 0.6)',
         inner:  'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
         none:   'none',
       },
@@ -167,8 +167,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         'pulse-brand': {
-          '0%, 100%': { boxShadow: '0 0 0 0 rgb(102 64 255 / 0.4)' },
-          '50%':      { boxShadow: '0 0 0 8px rgb(102 64 255 / 0)' },
+          '0%, 100%': { boxShadow: '0 0 0 0 rgb(195 245 60 / 0.4)' },
+          '50%':      { boxShadow: '0 0 0 8px rgb(195 245 60 / 0)' },
         },
         'shimmer': {
           '0%':   { backgroundPosition: '-1000px 0' },
@@ -184,11 +184,11 @@ const config: Config = {
 
       // ─── GRADIENTS (через backgroundImage) ───────────────────────────────
       backgroundImage: {
-        'gradient-brand':      'linear-gradient(135deg, #6640ff 0%, #9b72ff 100%)',
-        'gradient-brand-dark': 'linear-gradient(135deg, #3d2699 0%, #6640ff 100%)',
-        'gradient-hero':       'linear-gradient(180deg, #05071a 0%, #0f0f1e 100%)',
-        'gradient-card':       'linear-gradient(145deg, rgba(102,64,255,0.05) 0%, rgba(102,64,255,0) 100%)',
-        'gradient-radial-brand': 'radial-gradient(ellipse at top, rgba(102,64,255,0.15) 0%, transparent 60%)',
+        'gradient-brand':      'linear-gradient(135deg, #C3F53C 0%, #D4FF5C 100%)',
+        'gradient-brand-dark': 'linear-gradient(135deg, #43590A 0%, #9CCB1A 100%)',
+        'gradient-hero':       'linear-gradient(180deg, #08090A 0%, #101215 100%)',
+        'gradient-card':       'none',
+        'gradient-radial-brand': 'none',
       },
     },
   },
@@ -201,27 +201,24 @@ const config: Config = {
         '.text-pretty':  { 'text-wrap': 'pretty' },
         // Градиентный текст
         '.text-gradient-brand': {
-          'background':              'linear-gradient(135deg, #6640ff, #a87dff)',
-          '-webkit-background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
-          'background-clip':         'text',
+          'color': '#C3F53C',
         },
         // Стеклянный эффект для тёмной темы
         '.glass-dark': {
-          'background': 'rgba(14, 14, 28, 0.6)',
+          'background': 'rgba(8, 9, 10, 0.72)',
           'backdrop-filter': 'blur(12px)',
           '-webkit-backdrop-filter': 'blur(12px)',
-          'border': '1px solid rgba(102, 64, 255, 0.15)',
+          'border': '1px solid rgba(255, 255, 255, 0.08)',
         },
         '.glass-light': {
           'background': 'rgba(255, 255, 255, 0.7)',
           'backdrop-filter': 'blur(12px)',
           '-webkit-backdrop-filter': 'blur(12px)',
-          'border': '1px solid rgba(102, 64, 255, 0.1)',
+          'border': '1px solid rgba(0, 0, 0, 0.08)',
         },
         // Focus visible кольцо в фирменном цвете
-        '.focus-brand': {
-          'outline': '2px solid #6640ff',
+        '.focus-brand:focus-visible': {
+          'outline': '2px solid #C3F53C',
           'outline-offset': '2px',
         },
       })

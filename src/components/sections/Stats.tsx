@@ -46,8 +46,8 @@ function Counter({ stat }: { stat: StatItem }) {
   return (
     <p
       ref={ref}
-      className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2"
-      style={{ color: 'var(--color-brand-400)' }}
+      className="font-mono-ui text-3xl md:text-4xl font-medium tracking-tight mb-1"
+      style={{ color: 'var(--text-primary)' }}
     >
       {count}
       {stat.suffix}
@@ -57,13 +57,13 @@ function Counter({ stat }: { stat: StatItem }) {
 
 export default function Stats() {
   return (
-    <Section background="surface" size="sm">
+    <Section background="surface" size="xs" className="border-y hairline">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 divide-x" style={{ borderColor: 'var(--border-default)' }}>
           {stats.map((s) => (
-            <div key={s.label}>
+            <div key={s.label} className="px-3 sm:px-8 py-2 text-left" style={{ borderColor: 'var(--border-default)' }}>
               <Counter stat={s} />
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-xs sm:text-sm" style={{ color: 'var(--text-secondary)' }}>
                 {s.label}
               </p>
             </div>

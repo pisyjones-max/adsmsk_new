@@ -146,15 +146,12 @@ export default function ServicePage({ params }: PageProps) {
       <ServiceProcess steps={service.process} />
 
       {/* 5. Результаты / метрики */}
-      <Section background="brand" size="sm">
+      <Section background="surface" size="xs" className="border-y hairline">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: 'var(--border-default)' }}>
             {service.results.map((r) => (
-              <div key={r.label}>
-                <p
-                  className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2"
-                  style={{ color: 'var(--color-brand-400)' }}
-                >
+              <div key={r.label} className="px-0 sm:px-8 py-4 sm:py-2 first:pl-0" style={{ borderColor: 'var(--border-default)' }}>
+                <p className="font-mono-ui text-2xl md:text-3xl font-medium tracking-tight mb-1" style={{ color: 'var(--text-primary)' }}>
                   {r.value}
                 </p>
                 <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
@@ -183,7 +180,7 @@ export default function ServicePage({ params }: PageProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((r) => (
-                <Link key={r.slug} href={`/uslugi/${r.slug}`} className="block">
+                <Link key={r.slug} href={`/uslugi/${r.slug}`} className="block h-full">
                   <ServiceCard
                     icon={<span className="text-xl" aria-hidden="true">{r.icon}</span>}
                     title={r.title}

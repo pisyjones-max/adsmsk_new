@@ -60,7 +60,7 @@ export default function CaseDetailPage({ params }: PageProps) {
 
       <Section size="sm">
         <Container size="md">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 bg-neutral-900">
+          <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-10 bg-neutral-900">
             <Image src={item.cover} alt={item.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" priority />
           </div>
 
@@ -75,8 +75,8 @@ export default function CaseDetailPage({ params }: PageProps) {
           <div className="flex flex-col gap-10">
             {item.steps.map((s) => (
               <div key={s.step} className="flex gap-5">
-                <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-bold"
-                     style={{ background: 'rgba(102,64,255,0.12)', color: 'var(--color-brand-400)' }}>
+                <div className="shrink-0 w-11 h-11 rounded-md flex items-center justify-center font-bold"
+                     style={{ background: 'transparent', border: '1px solid var(--border-strong)', color: 'var(--color-brand-400)' }}>
                   {s.step}
                 </div>
                 <div>
@@ -87,8 +87,8 @@ export default function CaseDetailPage({ params }: PageProps) {
             ))}
           </div>
 
-          <div className="mt-14 rounded-2xl p-6 md:p-8"
-               style={{ background: 'rgba(102,64,255,0.08)', borderLeft: '3px solid var(--color-brand-500)' }}>
+          <div className="mt-14 rounded-lg p-6 md:p-8"
+               style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-default)', borderLeft: '2px solid var(--color-brand-500)' }}>
             <p className="text-xs font-medium uppercase tracking-wider mb-2" style={{ color: 'var(--color-brand-400)' }}>
               Результат
             </p>
@@ -103,7 +103,7 @@ export default function CaseDetailPage({ params }: PageProps) {
             <Heading level={2} className="mb-8 text-center">Галерея проекта</Heading>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {item.gallery.map((src) => (
-                <div key={src} className="relative aspect-square rounded-xl overflow-hidden bg-neutral-900">
+                <div key={src} className="relative aspect-square rounded-md overflow-hidden bg-neutral-900">
                   <Image src={src} alt={item.title} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
                 </div>
               ))}
