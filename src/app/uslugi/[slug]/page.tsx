@@ -178,7 +178,7 @@ export default function ServicePage({ params }: PageProps) {
               <Heading level={2}>Похожие услуги</Heading>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="cards-grid grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((r) => (
                 <Link key={r.slug} href={`/uslugi/${r.slug}`} className="block h-full">
                   <ServiceCard
