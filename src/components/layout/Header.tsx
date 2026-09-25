@@ -50,21 +50,19 @@ export default function Header() {
       {/* Skip-link для клавиатурной/скринридер-навигации */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-brand-500 focus:px-4 focus:py-2 focus:text-white focus-brand"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-brand-500 focus:px-4 focus:py-2 focus:text-neutral-950 focus-brand"
       >
         Перейти к основному содержимому
       </a>
 
       <header
         className={[
-          'sticky top-0 z-50 w-full transition-all duration-300',
-          scrolled
-            ? 'bg-neutral-950/85 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20'
-            : 'bg-neutral-950/40 backdrop-blur-sm border-b border-transparent',
+          'sticky top-0 z-50 w-full border-b hairline backdrop-blur-md transition-colors duration-300',
+          scrolled ? 'bg-neutral-950/90' : 'bg-neutral-950/60',
         ].join(' ')}
       >
         <Container as="div" size="xl">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-16">
             {/* Логотип */}
             <Link
               href="/"
@@ -77,9 +75,9 @@ export default function Header() {
                 width={36}
                 height={36}
                 priority
-                className="rounded-md"
+                className="rounded"
               />
-              <span className="font-bold text-lg sm:text-xl text-white tracking-tight">
+              <span className="font-semibold text-lg text-white tracking-tight">
                 Ads<span className="text-brand-400">Msk</span>
               </span>
             </Link>
@@ -94,17 +92,17 @@ export default function Header() {
                     href={item.href}
                     aria-current={isActive ? 'page' : undefined}
                     className={[
-                      'relative px-3.5 py-2 text-sm font-medium rounded-lg transition-colors focus-brand',
+                      'relative px-3 h-9 inline-flex items-center text-sm rounded-md transition-colors focus-brand',
                       isActive
                         ? 'text-white'
-                        : 'text-white/70 hover:text-white hover:bg-white/5',
+                        : 'text-neutral-400 hover:text-white',
                     ].join(' ')}
                   >
                     {item.label}
                     {isActive && (
                       <span
                         aria-hidden="true"
-                        className="absolute left-3.5 right-3.5 -bottom-px h-0.5 rounded-full bg-brand-400"
+                        className="absolute left-3 right-3 -bottom-[14px] h-px bg-brand-500"
                       />
                     )}
                   </Link>
@@ -114,8 +112,14 @@ export default function Header() {
 
             {/* CTA + бургер */}
             <div className="flex items-center gap-2 sm:gap-3">
+              <a
+                href="tel:+79154683925"
+                className="hidden lg:inline-block font-mono-ui text-sm text-neutral-300 hover:text-white transition-colors mr-2 focus-brand rounded"
+              >
+                {PHONE}
+              </a>
               <Button href="/contact" size="md" className="hidden sm:inline-flex">
-                Получить консультацию
+                Обсудить проект
               </Button>
 
               <button
@@ -125,7 +129,7 @@ export default function Header() {
                 aria-haspopup="dialog"
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
-                className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors focus-brand"
+                className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border hairline text-white/80 hover:text-white transition-colors focus-brand"
               >
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                   <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />

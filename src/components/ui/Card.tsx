@@ -48,7 +48,7 @@ export function Card({
 // ─── Service Card ────────────────────────────────────────────────────────────
 
 interface ServiceCardProps {
-  icon:        ReactNode
+  icon?:       ReactNode
   title:       string
   description: string
   /** Список пунктов включённых услуг */
@@ -60,73 +60,56 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({
-  icon,
   title,
   description,
   features,
   cta,
-  onCtaClick,
   className = '',
 }: ServiceCardProps) {
-  return (
-    <Card
-      hoverable
-      className={`group flex flex-col gap-5 ${className}`}
-    >
-      {/* Icon */}
-      <div className="icon-wrap-md icon-wrap-brand transition-transform duration-300 group-hover:scale-110">
-        {icon}
-      </div>
+  // cta вида «Подробнее · от 35 000 ₽» → метка слева, цена справа
+  const [ctaLabel, ctaPrice] = cta ? cta.split(' · ') : [undefined, undefined]
 
-      {/* Title */}
-      <div>
-        <h3 className="heading-4 mb-2">{title}</h3>
+  return (
+    <Card hoverable padding="none" className={`group flex flex-col h-full ${className}`}>
+      <div className="flex flex-col gap-3 p-6 flex-1">
+        <span className="card-index" aria-hidden="true" />
+        <h3 className="heading-4">{title}</h3>
         <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
           {description}
         </p>
+
+        {features && features.length > 0 && (
+          <ul className="flex flex-col gap-2 mt-1">
+            {features.map((f, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <span className="mt-2 block w-1.5 h-1.5 shrink-0" style={{ background: 'var(--color-brand-500)' }} aria-hidden="true" />
+                {f}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
-      {/* Features list */}
-      {features && features.length > 0 && (
-        <ul className="flex flex-col gap-2 mt-1">
-          {features.map((f, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-              <svg
-                className="w-4 h-4 shrink-0 mt-0.5"
-                style={{ color: 'var(--color-brand-500)' }}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2.5}
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              {f}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* CTA */}
       {cta && (
-        <div className="mt-auto pt-2">
-          <button
-            onClick={onCtaClick}
-            className="btn-ghost btn-sm group-hover:text-brand-400 transition-colors px-0"
-          >
-            {cta}
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        <div
+          className="flex items-center justify-between gap-3 px-6 h-12 border-t text-sm"
+          style={{ borderColor: 'var(--border-default)' }}
+        >
+          <span className="inline-flex items-center gap-1.5 font-medium transition-colors group-hover:text-[color:var(--color-brand-400)]" style={{ color: 'var(--text-primary)' }}>
+            {ctaLabel}
+            <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-          </button>
+          </span>
+          {ctaPrice && (
+            <span className="font-mono-ui text-xs" style={{ color: 'var(--color-brand-400)' }}>{ctaPrice}</span>
+          )}
         </div>
       )}
     </Card>
   )
 }
 
-// ─── Case Card (кейс / портфолио) ────────────────────────────────────────────
 
 interface CaseCardProps {
   image?:      string
@@ -153,49 +136,39 @@ export function CaseCard({
 }: CaseCardProps) {
   const Wrapper = href ? 'a' : 'div'
   const wrapperProps = href
-    ? { href, className: 'group block' }
-    : { className: 'group' }
+    ? { href, className: 'group block h-full' }
+    : { className: 'group block h-full' }
 
   return (
-    // @ts-ignore — dynamic tag
     <Wrapper {...wrapperProps}>
-      <Card hoverable className={`overflow-hidden p-0 ${className}`}>
-        {/* Image */}
+      <Card hoverable padding="none" className={`overflow-hidden flex flex-col h-full ${className}`}>
         {image && (
-          <div className="relative w-full aspect-video overflow-hidden bg-neutral-800">
+          <div className="relative w-full aspect-video overflow-hidden border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-elevated)' }}>
             <Image
               src={image}
               alt={imageAlt || title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              sizes="(max-width: 768px) 100vw, 400px"
             />
-            {/* Category badge */}
             <div className="absolute top-3 left-3">
               <span className="badge-brand">{category}</span>
             </div>
           </div>
         )}
 
-        <div className="p-6 flex flex-col gap-4">
-          {/* Title */}
+        <div className="p-5 flex flex-col gap-4 flex-1">
           <h3 className="heading-4 text-balance">{title}</h3>
 
-          {/* Result highlight */}
-          <div className="flex items-start gap-3 rounded-xl p-4"
-               style={{ background: 'rgba(102,64,255,0.08)', borderLeft: '3px solid var(--color-brand-500)' }}>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider mb-1"
-                 style={{ color: 'var(--color-brand-400)' }}>
-                {resultLabel}
-              </p>
-              <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
-                {result}
-              </p>
-            </div>
+          <div className="mt-auto pt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
+            <p className="font-mono-ui text-[11px] uppercase tracking-[0.12em] mb-1.5" style={{ color: 'var(--color-brand-500)' }}>
+              {resultLabel}
+            </p>
+            <p className="text-sm" style={{ color: 'var(--text-primary)' }}>
+              {result}
+            </p>
           </div>
 
-          {/* Tags */}
           {tags && tags.length > 0 && (
             <div className="flex flex-wrap gap-1.5">
               {tags.map((tag, i) => (
@@ -208,6 +181,7 @@ export function CaseCard({
     </Wrapper>
   )
 }
+
 
 // ─── Review Card (отзыв) ──────────────────────────────────────────────────────
 
@@ -275,11 +249,11 @@ export function ReviewCard({
             alt={author}
             width={40}
             height={40}
-            className="rounded-full object-cover shrink-0"
+            className="rounded-md object-cover shrink-0"
           />
         ) : (
-          <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-               style={{ background: 'var(--color-brand-800)', color: 'var(--color-brand-300)' }}>
+          <div className="w-10 h-10 rounded-md flex items-center justify-center text-sm font-bold shrink-0"
+               style={{ background: 'var(--bg-elevated)', color: 'var(--color-brand-400)' }}>
             {author.charAt(0).toUpperCase()}
           </div>
         )}

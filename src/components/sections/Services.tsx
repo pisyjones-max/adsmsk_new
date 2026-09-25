@@ -11,9 +11,9 @@ const priceLabel = (href: string) => formatPrice(href.split('/').pop() ?? '')
 
 function ServiceGrid({ items }: { items: ServiceItem[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {items.map((s) => (
-        <Link key={s.href} href={s.href} className="block">
+        <Link key={s.href} href={s.href} className="block h-full">
           <ServiceCard
             icon={<span className="text-xl" aria-hidden="true">{s.icon}</span>}
             title={s.title}
@@ -30,12 +30,12 @@ export default function Services() {
   return (
     <Section id="services" background="default" divider>
       <Container>
-        <div className="text-center mb-14">
-          <div className="section-label justify-center mb-4">Что мы делаем</div>
+        <div className="mb-10 max-w-2xl">
+          <div className="section-label mb-4">Что мы делаем</div>
           <Heading level={2} className="mb-4">
             Сайты и интернет-магазины для бизнеса
           </Heading>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+          <p style={{ color: 'var(--text-secondary)' }}>
             Разрабатываем, дорабатываем и сопровождаем сайты. Каждый проект
             собираем под вашу задачу — с дизайном, аналитикой и подготовкой к продвижению.
           </p>
@@ -43,12 +43,12 @@ export default function Services() {
 
         <ServiceGrid items={webServices} />
 
-        <div className="text-center mt-20 mb-14">
-          <div className="section-label justify-center mb-4">Усиливаем сайт</div>
-          <Heading level={3} className="mb-4">
+        <div className="mt-16 mb-10 max-w-2xl">
+          <div className="section-label mb-4">Усиливаем сайт</div>
+          <Heading level={3} className="mb-3">
             Реклама, боты, автоматизация и маркетплейсы
           </Heading>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+          <p style={{ color: 'var(--text-secondary)' }}>
             Дополнительные направления, которые помогают сайту приводить клиентов
             и экономить время команды.
           </p>
@@ -56,7 +56,7 @@ export default function Services() {
 
         <ServiceGrid items={growthServices} />
 
-        <div className="text-center mt-12">
+        <div className="mt-10">
           <Button size="lg" variant="secondary" href="/uslugi">
             Все услуги
           </Button>

@@ -52,9 +52,9 @@ export default function ServicesCatalogPage() {
                 <Heading level={2} className="mb-3">{group.title}</Heading>
                 <p style={{ color: 'var(--text-secondary)' }}>{group.description}</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {items.map((s) => (
-                  <Link key={s.slug} href={`/uslugi/${s.slug}`} className="block">
+                  <Link key={s.slug} href={`/uslugi/${s.slug}`} className="block h-full">
                     <ServiceCard
                       icon={<span className="text-xl" aria-hidden="true">{s.icon}</span>}
                       title={s.title}

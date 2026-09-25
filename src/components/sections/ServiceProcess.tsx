@@ -25,8 +25,8 @@ export default function ServiceProcess({ steps }: ServiceProcessProps) {
           {steps.map((step, i) => (
             <li key={step.title} className="card-base p-6 flex flex-col gap-4 relative">
               <div
-                className="flex items-center justify-center w-11 h-11 rounded-xl font-bold text-lg shrink-0"
-                style={{ background: 'rgba(102,64,255,0.12)', color: 'var(--color-brand-400)' }}
+                className="flex items-center justify-center w-11 h-11 rounded-md font-mono-ui text-base shrink-0"
+                style={{ background: 'transparent', border: '1px solid var(--border-strong)', color: 'var(--color-brand-400)' }}
                 aria-hidden="true"
               >
                 {i + 1}

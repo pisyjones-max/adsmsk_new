@@ -19,11 +19,12 @@ interface ServiceHeroProps {
 
 export default function ServiceHero({ label, title, description, breadcrumbs, price }: ServiceHeroProps) {
   return (
-    <Section as="header" size="lg" background="dark" glow className="min-h-[60vh] flex items-center">
-      <Container centered>
+    <Section as="header" size="lg" background="dark" glow>
+      <Container>
+        <div className="max-w-3xl">
         {/* Breadcrumbs */}
         <nav aria-label="Хлебные крошки" className="mb-6 animate-fade-in">
-          <ol className="flex flex-wrap items-center justify-center gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+          <ol className="flex flex-wrap items-center gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
             {breadcrumbs.map((crumb, i) => (
               <li key={i} className="flex items-center gap-2">
                 {i > 0 && <span aria-hidden="true">/</span>}
@@ -41,31 +42,32 @@ export default function ServiceHero({ label, title, description, breadcrumbs, pr
 
         <div className="section-label mb-6 animate-fade-in animate-delay-100">{label} · AdsMsk</div>
 
-        <h1 className="heading-display text-balance mb-6 animate-fade-in animate-delay-200">{title}</h1>
+        <h1 className="heading-display mb-6 animate-fade-in animate-delay-200">{title}</h1>
 
         <p
-          className="text-xl max-w-prose mb-10 animate-fade-in animate-delay-300"
+          className="text-base md:text-lg max-w-2xl mb-8 animate-fade-in animate-delay-300"
           style={{ color: 'var(--text-secondary)' }}
         >
           {description}
         </p>
 
         {price && (
-          <p className="mb-8 animate-fade-in animate-delay-300" style={{ color: 'var(--text-primary)' }}>
-            <span className="text-2xl font-semibold">{price}</span>
-            <span className="block text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+          <p className="mb-8 animate-fade-in animate-delay-300 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span className="font-mono-ui text-2xl" style={{ color: 'var(--color-brand-400)' }}>{price}</span>
+            <span className="text-sm" style={{ color: 'var(--text-muted)' }}>
               точную стоимость назовём после короткого брифа
             </span>
           </p>
         )}
 
-        <div className="flex flex-wrap gap-4 justify-center animate-fade-in animate-delay-300">
+        <div className="flex flex-wrap gap-3 animate-fade-in animate-delay-300">
           <Button size="lg" href="https://t.me/UR16_bot?start" external>
             Получить консультацию
           </Button>
           <Button size="lg" variant="secondary" href="#faq">
             Частые вопросы
           </Button>
+        </div>
         </div>
       </Container>
     </Section>

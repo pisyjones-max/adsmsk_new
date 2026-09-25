@@ -201,10 +201,10 @@ export default function ContactPage() {
 
               {/* Promise block */}
               <div
-                className="rounded-2xl p-5 mt-auto"
+                className="rounded-lg p-5 mt-auto"
                 style={{
-                  background:  'rgba(102,64,255,0.08)',
-                  border:      '1px solid rgba(102,64,255,0.2)',
+                  background:  'var(--bg-surface)',
+                  border:      '1px solid var(--border-default)',
                 }}
               >
                 <p className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>

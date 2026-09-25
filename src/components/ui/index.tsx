@@ -345,13 +345,13 @@ interface IconWrapProps {
 const iconSizeMap: Record<IconSize, string> = {
   xs: 'w-6  h-6  rounded-md',
   sm: 'w-8  h-8  rounded-lg',
-  md: 'w-11 h-11 rounded-xl',
-  lg: 'w-14 h-14 rounded-2xl',
-  xl: 'w-18 h-18 rounded-2xl',
+  md: 'w-10 h-10 rounded-md',
+  lg: 'w-12 h-12 rounded-lg',
+  xl: 'w-16 h-16 rounded-lg',
 }
 
 const iconVariantStyle: Record<IconVariant, React.CSSProperties> = {
-  brand:   { background: 'rgba(102,64,255,0.12)', color: 'var(--color-brand-400)' },
+  brand:   { background: 'transparent', color: 'var(--color-brand-400)', border: '1px solid var(--border-strong)' },
   neutral: { background: 'var(--bg-elevated)',    color: 'var(--text-secondary)' },
   success: { background: 'rgba(16,185,129,0.12)', color: 'var(--color-success)' },
   error:   { background: 'rgba(239,68,68,0.12)',  color: 'var(--color-error)' },
